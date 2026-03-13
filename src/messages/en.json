@@ -1,0 +1,459 @@
+{
+  "meta": {
+    "title": "Asteraid — Professional Asterisk PBX Management",
+    "description": "Web platform for Asterisk administration: real-time station monitoring, visual dialplan editor, CDR, SSH terminal and Active Directory."
+  },
+  "nav": {
+    "features": "Features",
+    "howItWorks": "How It Works",
+    "benefits": "Benefits",
+    "techStack": "Tech Stack",
+    "faq": "FAQ",
+    "requestDemo": "Request Demo"
+  },
+  "hero": {
+    "badge": "Profliga SRL · version 3.1",
+    "headline1": "Manage Asterisk",
+    "headline2": "without the pain.",
+    "headline3": "One portal —",
+    "headline4": "all stations.",
+    "subheadline": "Professional web platform for Asterisk PBX administration: real-time monitoring, visual dialplan editor, call history and SSH terminal right in the browser.",
+    "ctaPrimary": "Request Demo",
+    "ctaSecondary": "All Features",
+    "dashboardUrl": "asteraid.corp.local/dashboard",
+    "dashboardTitle": "ADMIN DASHBOARD",
+    "live": "LIVE",
+    "stations": "Stations",
+    "extensions": "Extensions",
+    "trunks": "Trunks",
+    "trunksValue": "8/8",
+    "trunksStatus": "all up",
+    "ramUsage": "RAM Usage · Station-1",
+    "online": "online",
+    "maintenance": "maintenance"
+  },
+  "stats": {
+    "sectionLabel": "Platform by the numbers",
+    "headline": "Everything you need to manage PBX",
+    "items": [
+      { "value": "N+", "label": "Asterisk stations from one window", "icon": "server" },
+      { "value": "4", "label": "Role-based access levels", "icon": "shield" },
+      { "value": "20+", "label": "Management modules", "icon": "layout" },
+      { "value": "AD", "label": "Active Directory support", "icon": "users" },
+      { "value": "CSV/XLS", "label": "CDR export formats", "icon": "file" },
+      { "value": "WS", "label": "WebSocket real-time", "icon": "activity" }
+    ]
+  },
+  "features": {
+    "sectionLabel": "Platform capabilities",
+    "headline1": "20+ management modules",
+    "headline2": "in one interface",
+    "subheadline": "From real-time monitoring to SSH terminal — everything a telephony engineer needs.",
+    "items": [
+      {
+        "id": "realtime",
+        "tag": "Real-time Dashboard",
+        "title": "Real-time Monitoring",
+        "description": "Via WebSocket the platform continuously receives and displays live metrics from all connected Asterisk stations.",
+        "items": [
+          "Memory load (RAM)",
+          "Trunk status: online / offline / disabled",
+          "Extension status: online / offline",
+          "Active channels",
+          "Last reload time",
+          "Performance chart (Chart.js)"
+        ]
+      },
+      {
+        "id": "multistation",
+        "tag": "Multi-Server Management",
+        "title": "Multi-Station Management",
+        "description": "Asteraid lets you add any number of Asterisk servers and manage them centrally.",
+        "items": [
+          "Add by hostname / IP",
+          "SSH connection (password or key)",
+          "Timezone and tone code setup",
+          "Maintenance Mode without deletion",
+          "Station operation log",
+          "Copy SSH key from UI"
+        ]
+      },
+      {
+        "id": "dialplan",
+        "tag": "No-code / Low-code",
+        "title": "Visual Dialplan Editor",
+        "description": "Unique feature: build call routing via drag-and-drop block diagram powered by ReactFlow.",
+        "items": [
+          "Drag-and-drop blocks: queue, forward, condition",
+          "Visual block connections with arrows",
+          "Generates real Asterisk dialplan",
+          "Preview of resulting code",
+          "Create and edit routing Rules templates"
+        ]
+      },
+      {
+        "id": "cdr",
+        "tag": "Call Detail Records",
+        "title": "Call History (CDR)",
+        "description": "Full call log via ODBC connection to the CDR database with powerful filters.",
+        "items": [
+          "Filter by type (inbound, outbound, missed)",
+          "Search by phone number",
+          "Built-in audio player for recordings",
+          "Export to CSV and XLSX",
+          "Pagination with lazy loading",
+          "Quick access to missed calls"
+        ]
+      },
+      {
+        "id": "pbx",
+        "tag": "PBX Configuration",
+        "title": "Extensions, Trunks & Queues",
+        "description": "Full management of Asterisk telephony objects: extensions, trunks, templates, queues.",
+        "items": [
+          "SIP / PJSIP trunks",
+          "Enable/disable trunk toggle",
+          "Templates for extensions and queues",
+          "Expert configuration (raw config)",
+          "Call queue management"
+        ]
+      },
+      {
+        "id": "users",
+        "tag": "User Management + RBAC",
+        "title": "Users & Roles",
+        "description": "Flexible role model with four access levels. Each role gets its own dashboard.",
+        "items": [
+          "Administrator: full access",
+          "Supervisor: statistics and groups",
+          "User: own calls and forwarding",
+          "Security: security dashboard",
+          "Phone number assignment",
+          "Switch roles without re-login"
+        ]
+      },
+      {
+        "id": "ad",
+        "tag": "Active Directory",
+        "title": "Active Directory Integration",
+        "description": "Seamless user import from the corporate LDAP directory.",
+        "items": [
+          "Connect to multiple AD controllers",
+          "Map AD groups to Asteraid roles",
+          "Import users with their data",
+          "Show source (AD vs local DB)",
+          "Configure baseDN"
+        ]
+      },
+      {
+        "id": "terminal",
+        "tag": "Web Terminal",
+        "title": "SSH Web Terminal",
+        "description": "Full-featured SSH terminal right in the browser powered by xterm.js.",
+        "items": [
+          "Connect to any added station",
+          "xterm.js — performant terminal",
+          "Clipboard support (ClipboardAddon)",
+          "Auto-resize (FitAddon)",
+          "Fullscreen mode",
+          "Quick launch via URL"
+        ]
+      },
+      {
+        "id": "firewall",
+        "tag": "Network Security",
+        "title": "Firewall Management",
+        "description": "Built-in firewall at station level with ipset support.",
+        "items": [
+          "Allow / deny rules by IP / CIDR",
+          "ipset support",
+          "Description per rule",
+          "Applied via Ansible scripts"
+        ]
+      },
+      {
+        "id": "editor",
+        "tag": "PBX Config Editor",
+        "title": "Config File Editor",
+        "description": "Built-in Monaco editor (like VS Code) for direct Asterisk config file editing.",
+        "items": [
+          "Asterisk config file syntax",
+          "Switch between files",
+          "System and client files",
+          "Fullscreen mode"
+        ]
+      },
+      {
+        "id": "ssl",
+        "tag": "TLS / SSL",
+        "title": "SSL Certificates",
+        "description": "Certificate management for secure telephony with metadata display.",
+        "items": [
+          "Upload certificate and key",
+          "Metadata: subject, issuer, expiry",
+          "Validity status (isValid, hasKey)",
+          "Assign active certificate"
+        ]
+      },
+      {
+        "id": "logger",
+        "tag": "Audit Log",
+        "title": "Action Log",
+        "description": "Complete history of all system changes with diff view.",
+        "items": [
+          "Action type: create / update / remove",
+          "User who performed the action",
+          "Previous and new value (diff)",
+          "Filter by users and entities"
+        ]
+      }
+    ]
+  },
+  "roles": {
+    "sectionLabel": "Role model",
+    "headline1": "Each role —",
+    "headline2": "its own dashboard",
+    "subheadline": "4 role-based access levels. Each user sees only what they need for their work.",
+    "matrixTitle": "Access Matrix",
+    "module": "Module",
+    "items": [
+      {
+        "id": "admin",
+        "name": "Administrator",
+        "description": "Full access to all platform sections",
+        "badge": "Full Access",
+        "features": [
+          "Summary widgets for all stations",
+          "RAM, trunk and extension monitoring",
+          "Station list with live status",
+          "Performance metrics",
+          "User and role management",
+          "System settings"
+        ]
+      },
+      {
+        "id": "supervisor",
+        "name": "Supervisor",
+        "description": "Call statistics and team management",
+        "badge": "Stats & Teams",
+        "features": [
+          "CDR by period (today / week / month)",
+          "Custom date range",
+          "Charts by number and group",
+          "Employee group management",
+          "Export stats to CSV/XLSX"
+        ]
+      },
+      {
+        "id": "user",
+        "name": "User",
+        "description": "Personal employee account",
+        "badge": "Personal",
+        "features": [
+          "Own account information",
+          "Assigned phone numbers",
+          "Own call history",
+          "Forwarding settings (CFNA, CFB, CFU, DND)",
+          "View own group"
+        ]
+      },
+      {
+        "id": "security",
+        "name": "Security",
+        "description": "Specialized security dashboard",
+        "badge": "Security Ops",
+        "features": [
+          "Unauthorized access attempt monitoring",
+          "Firewall rule management",
+          "SSL certificates and status",
+          "Audit action log",
+          "Encryption key management"
+        ]
+      }
+    ],
+    "matrix": [
+      { "module": "Dashboard", "admin": true, "supervisor": true, "user": true, "security": true },
+      { "module": "Stations / Servers", "admin": true, "supervisor": false, "user": false, "security": false },
+      { "module": "Users", "admin": true, "supervisor": false, "user": false, "security": false },
+      { "module": "CDR / Calls", "admin": true, "supervisor": true, "user": true, "security": false },
+      { "module": "Dialplans", "admin": true, "supervisor": false, "user": false, "security": false },
+      { "module": "Firewall / SSL", "admin": true, "supervisor": false, "user": false, "security": true },
+      { "module": "Audit Log", "admin": true, "supervisor": false, "user": false, "security": true },
+      { "module": "System Settings", "admin": true, "supervisor": false, "user": false, "security": false }
+    ]
+  },
+  "howItWorks": {
+    "sectionLabel": "Quick start",
+    "headline": "How it works",
+    "subheadline": "From installation to a working platform — the initialization wizard walks you through all steps in 5 minutes.",
+    "wizardTag": "Easy Setup",
+    "wizardTitle": "Initialization Wizard",
+    "wizardDesc": "Step-by-step wizard: Admin → Connection → Groups → CDR → Certificates → Finished",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Installation",
+        "description": "Deploy Asteraid on your server. The step-by-step initialization wizard guides you through all settings in 5 minutes."
+      },
+      {
+        "step": "02",
+        "title": "Connect Stations",
+        "description": "Add your Asterisk servers by hostname. Asteraid connects via SSH and starts monitoring automatically."
+      },
+      {
+        "step": "03",
+        "title": "Set Up Users",
+        "description": "Import employees from Active Directory or create them manually. Assign roles — each gets their own dashboard."
+      },
+      {
+        "step": "04",
+        "title": "Manage Telephony",
+        "description": "Trunks, extensions, queues, dialplans — all accessible from the browser. The visual routing editor works without Asterisk syntax knowledge."
+      }
+    ]
+  },
+  "benefits": {
+    "sectionLabel": "Key advantages",
+    "headline1": "Why choose",
+    "headline2": "Asteraid",
+    "subheadline": "Built by IT engineers for IT engineers. No marketing fluff — just concrete solutions to concrete problems.",
+    "items": [
+      {
+        "title": "Single Portal",
+        "description": "Manage all company Asterisk servers from one place without switching between SSH sessions and different interfaces.",
+        "icon": "monitor"
+      },
+      {
+        "title": "Lower Entry Barrier",
+        "description": "Visual dialplan editor and ready-made templates lower the entry barrier — no Asterisk expert needed for every click.",
+        "icon": "zap"
+      },
+      {
+        "title": "Real-time Control",
+        "description": "See infrastructure status here and now — via WebSocket, not cron scripts.",
+        "icon": "activity"
+      },
+      {
+        "title": "Full History",
+        "description": "Audit log records every change: who, what, when and how it was changed. With diff view.",
+        "icon": "file-text"
+      },
+      {
+        "title": "Enterprise Integration",
+        "description": "Active Directory, SSL certificates, ODBC CDR databases — full integration with your infrastructure.",
+        "icon": "building"
+      },
+      {
+        "title": "Security",
+        "description": "Built-in Firewall, TLS certificates, encryption and role-based permissions — security out of the box.",
+        "icon": "shield"
+      },
+      {
+        "title": "SSH in Browser",
+        "description": "No need to open PuTTY. Full SSH terminal right in a browser tab.",
+        "icon": "terminal"
+      },
+      {
+        "title": "Scalability",
+        "description": "Works with one station and a cluster. Adding new servers takes a couple of clicks.",
+        "icon": "layers"
+      }
+    ]
+  },
+  "techStack": {
+    "sectionLabel": "Technology stack",
+    "headline1": "Built on",
+    "headline2": "proven technologies",
+    "subheadline": "Production-ready stack with no experimental dependencies.",
+    "backendTitle": "Backend / Server",
+    "frontendTitle": "Frontend / Client",
+    "landingLabel": "This landing:",
+    "server": [
+      "Node.js + Express",
+      "MongoDB",
+      "ODBC (CDR)",
+      "Socket.IO",
+      "SSH2",
+      "Asterisk AMI",
+      "Active Directory (LDAP)",
+      "FFmpeg",
+      "Ansible",
+      "JWT + bcrypt",
+      "Winston",
+      "PM2"
+    ],
+    "client": [
+      "React 17 + TypeScript",
+      "Redux + Thunk",
+      "PrimeReact",
+      "ReactFlow",
+      "Monaco Editor",
+      "xterm.js",
+      "Chart.js",
+      "Socket.IO Client",
+      "React Router v6",
+      "driver.js",
+      "Luxon"
+    ]
+  },
+  "faq": {
+    "sectionLabel": "FAQ",
+    "headline": "Frequently Asked Questions",
+    "subheadline": "Didn't find the answer? Write to us — we'll respond within a business day.",
+    "items": [
+      {
+        "id": "multi",
+        "question": "Does Asteraid work with multiple Asterisk servers?",
+        "answer": "Yes, Asteraid is designed for multi-station management. You add any number of servers and manage them centrally from one interface."
+      },
+      {
+        "id": "expertise",
+        "question": "Do I need Asterisk knowledge to use the platform?",
+        "answer": "Basic knowledge helps, but the visual dialplan editor and configuration templates significantly lower the entry barrier. Most tasks are done through the graphical interface."
+      },
+      {
+        "id": "ad",
+        "question": "Is Active Directory supported?",
+        "answer": "Yes, Asteraid supports connecting to multiple AD controllers with group mapping to roles (Administrator, Supervisor, User). Users are imported with their data."
+      },
+      {
+        "id": "cdr",
+        "question": "How are call records stored?",
+        "answer": "Asteraid connects to your existing CDR database via ODBC. Records stay where they always were — nothing is migrated."
+      },
+      {
+        "id": "mobile",
+        "question": "Is there a mobile version?",
+        "answer": "The interface is responsive. Primary use is designed for desktop, but key sections are accessible from a tablet."
+      },
+      {
+        "id": "security",
+        "question": "How is security ensured?",
+        "answer": "JWT authentication, bcrypt password hashing, role-based access control (RBAC), built-in Firewall with ipset support, TLS certificate management, encryption key management."
+      }
+    ]
+  },
+  "cta": {
+    "sectionLabel": "Get started today",
+    "headline1": "Ready to bring order",
+    "headline2": "to your telephony?",
+    "subheadline": "Request a demo or deploy Asteraid yourself — the initialization wizard will guide you in 5 minutes.",
+    "ctaPrimary": "Request Demo",
+    "ctaSecondary": "Documentation",
+    "trust": [
+      { "icon": "🔒", "label": "JWT + bcrypt" },
+      { "icon": "🏢", "label": "Profliga SRL" },
+      { "icon": "⚡", "label": "WebSocket Real-time" },
+      { "icon": "🛡️", "label": "RBAC + Firewall" }
+    ]
+  },
+  "footer": {
+    "description": "Professional web platform for Asterisk PBX administration.",
+    "version": "by Profliga SRL · v3.1",
+    "navigation": "Navigation",
+    "landingStack": "Landing Stack",
+    "contact": "Contact",
+    "copyright": "Profliga SRL. All rights reserved.",
+    "systemOnline": "System online · v2026.02.21"
+  }
+}
