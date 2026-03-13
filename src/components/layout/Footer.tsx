@@ -1,8 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-
-const LANDING_STACK = ['Next.js 15', 'Zustand', 'shadcn/ui', 'Tailwind CSS', 'TypeScript']
+import Logo from '@/components/ui/Logo'
 
 export default function Footer() {
   const t = useTranslations('footer')
@@ -14,6 +13,13 @@ export default function Footer() {
     { label: tn('benefits'), href: '#benefits' },
     { label: tn('techStack'), href: '#tech-stack' },
     { label: tn('faq'), href: '#faq' },
+  ]
+
+  const RESOURCE_ITEMS = [
+    { label: t('resourceDocs'), href: '#' },
+    { label: t('resourceChangelog'), href: '#' },
+    { label: t('resourceSupport'), href: '#' },
+    { label: t('resourcePrivacy'), href: '#' },
   ]
 
   return (
@@ -30,23 +36,8 @@ export default function Footer() {
         }}>
           {/* Brand */}
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
-              <div style={{
-                width: '28px', height: '28px',
-                background: 'linear-gradient(135deg, #00b4d8, #0090b8)',
-                borderRadius: '6px',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-              }}>
-                <svg width="15" height="15" viewBox="0 0 18 18" fill="none">
-                  <circle cx="9" cy="9" r="3" fill="#06090f"/>
-                  <path d="M9 2v2M9 14v2M2 9h2M14 9h2M4.05 4.05l1.41 1.41M12.54 12.54l1.41 1.41M4.05 13.95l1.41-1.41M12.54 5.46l1.41-1.41"
-                    stroke="#06090f" strokeWidth="1.5" strokeLinecap="round"/>
-                </svg>
-              </div>
-              <span style={{
-                fontFamily: 'var(--font-display)', fontSize: '18px',
-                fontWeight: 700, letterSpacing: '0.05em', color: 'var(--text-primary)',
-              }}>ASTERAID</span>
+            <div style={{ marginBottom: '16px' }}>
+              <Logo height={26} />
             </div>
             <p style={{ color: 'var(--text-secondary)', fontSize: '14px', lineHeight: '1.6', maxWidth: '240px' }}>
               {t('description')}
@@ -75,18 +66,21 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Stack */}
+          {/* Resources */}
           <div>
             <h4 style={{
               fontFamily: 'var(--font-display)', fontSize: '14px', fontWeight: 600,
               letterSpacing: '0.1em', textTransform: 'uppercase',
               color: 'var(--text-muted)', marginBottom: '16px',
-            }}>{t('landingStack')}</h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              {LANDING_STACK.map(tech => (
-                <span key={tech} style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--text-secondary)' }}>
-                  {tech}
-                </span>
+            }}>{t('resources')}</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              {RESOURCE_ITEMS.map(item => (
+                <a key={item.href + item.label} href={item.href} style={{
+                  color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s',
+                }}
+                onMouseEnter={e => (e.currentTarget.style.color = 'var(--accent-primary)')}
+                onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-secondary)')}
+                >{item.label}</a>
               ))}
             </div>
           </div>

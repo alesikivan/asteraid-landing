@@ -5,7 +5,9 @@ import Features from '@/components/sections/Features'
 import RoleDashboards from '@/components/sections/RoleDashboards'
 import HowItWorks from '@/components/sections/HowItWorks'
 import Benefits from '@/components/sections/Benefits'
-import TechStack from '@/components/sections/TechStack'
+// import TechStack from '@/components/sections/TechStack'
+import BeforeAfter from '@/components/sections/BeforeAfter'
+import SystemRequirements from '@/components/sections/SystemRequirements'
 import FAQ from '@/components/sections/FAQ'
 import CTA from '@/components/sections/CTA'
 
@@ -21,11 +23,13 @@ export default async function HomePage({ params }: Props) {
     <>
       <Hero />
       <Stats />
+      <SystemRequirements />
       <Features />
       <RoleDashboards />
       <HowItWorks />
       <Benefits />
-      <TechStack />
+      <BeforeAfter />
+      {/* <TechStack /> */}
       <FAQ />
       <CTA />
     </>

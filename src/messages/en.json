@@ -9,7 +9,7 @@
     "benefits": "Benefits",
     "techStack": "Tech Stack",
     "faq": "FAQ",
-    "requestDemo": "Request Demo"
+    "requestDemo": "Try for Free"
   },
   "hero": {
     "badge": "Profliga SRL · version 3.1",
@@ -18,7 +18,7 @@
     "headline3": "One portal —",
     "headline4": "all stations.",
     "subheadline": "Professional web platform for Asterisk PBX administration: real-time monitoring, visual dialplan editor, call history and SSH terminal right in the browser.",
-    "ctaPrimary": "Request Demo",
+    "ctaPrimary": "Try for Free",
     "ctaSecondary": "All Features",
     "dashboardUrl": "asteraid.corp.local/dashboard",
     "dashboardTitle": "ADMIN DASHBOARD",
@@ -360,6 +360,111 @@
       }
     ]
   },
+  "beforeAfter": {
+    "sectionLabel": "Why switch",
+    "headline1": "Asterisk management:",
+    "headline2": "before and after",
+    "subheadline": "The real difference between managing Asterisk manually and with Asteraid.",
+    "colBefore": "Without Asteraid",
+    "colAfter": "With Asteraid",
+    "summaryBefore": "Scattered tools · SSH sessions · manual config · no visibility",
+    "summaryAfter": "One interface · automation · templates · full control",
+    "items": [
+      {
+        "task": "Server access",
+        "icon": "🖥️",
+        "before": "SSH into each server separately, juggling different IPs and credentials",
+        "after": "All Asterisk servers in one web interface — switch stations in one click"
+      },
+      {
+        "task": "Config editing",
+        "icon": "📝",
+        "before": "Edit .conf files in terminal — one typo can break the entire PBX",
+        "after": "Visual editor with templates and Monaco syntax highlighting, no broken configs"
+      },
+      {
+        "task": "Call history",
+        "icon": "📞",
+        "before": "Raw SQL queries against the CDR database or third-party reporting tools",
+        "after": "Built-in CDR: filters by type/number, audio playback, one-click CSV/XLSX export"
+      },
+      {
+        "task": "Dial routing",
+        "icon": "🔀",
+        "before": "Write Asterisk dialplan syntax by hand — requires deep expert knowledge",
+        "after": "Drag-and-drop visual builder generates real dialplan automatically"
+      },
+      {
+        "task": "Users & phones",
+        "icon": "👥",
+        "before": "Edit sip.conf manually for every extension change, no bulk operations",
+        "after": "Web UI with templates, bulk CSV import, and Active Directory sync"
+      },
+      {
+        "task": "Change audit",
+        "icon": "🔍",
+        "before": "No record of who changed what — debugging is a guessing game",
+        "after": "Full audit log: actor, timestamp, diff view of before/after values"
+      },
+      {
+        "task": "Firewall & SSL",
+        "icon": "🔒",
+        "before": "iptables commands over SSH, manual certificate files, no central view",
+        "after": "Built-in Firewall manager with ipset and SSL certificate dashboard"
+      },
+      {
+        "task": "Monitoring",
+        "icon": "📊",
+        "before": "CLI tools (asterisk -r), no dashboards, no alerts",
+        "after": "Live dashboard via WebSocket: RAM, trunks, extensions, active channels"
+      }
+    ]
+  },
+  "systemRequirements": {
+    "sectionLabel": "Deployment",
+    "headline1": "System",
+    "headline2": "Requirements",
+    "subheadline": "Minimum hardware and network requirements for deploying Asteraid.",
+    "colComponent": "Component",
+    "colPhysical": "Physical Server",
+    "colVirtual": "Virtual Machine",
+    "rows": [
+      {
+        "component": "CPU",
+        "physical": "1 CPU (Intel/AMD x86_64)",
+        "virtual": "1 vCPU x86_64"
+      },
+      {
+        "component": "Memory",
+        "physical": "2GB minimum",
+        "virtual": "2GB minimum"
+      },
+      {
+        "component": "Storage (OS with Docker images and containers only. For user data, such as backups, audio recordings, CDRs, etc., it is recommended to use separate disks.)",
+        "physical": "16GB minimum",
+        "virtual": "16GB minimum"
+      },
+      {
+        "component": "Network",
+        "physical": "1Gb Ethernet adapter (Wi-Fi not supported)",
+        "virtual": "Ethernet adapter in bridge mode (NAT not recommended)"
+      },
+      {
+        "component": "Boot Mode",
+        "physical": "BIOS or UEFI",
+        "virtual": "BIOS compatible"
+      }
+    ],
+    "noteTitle": "Note:",
+    "noteText": "These are minimum requirements. Production environments typically require more resources. 2 CPU Core and 8 GB of RAM should be sufficient in most cases.",
+    "networkTitle": "Network Requirements",
+    "networkItems": [
+      { "label": "Stable Internet Connection:", "text": "Minimum 5Mbps recommended" },
+      { "label": "DHCP Network:", "text": "Automatic IP configuration is required" },
+      { "label": "Firewall Access:", "text": "HTTP/HTTPS access to Asteraid repositories must be allowed" },
+      { "label": "Proxy Configuration:", "text": "Configure proxy settings if behind a corporate proxy" }
+    ]
+  },
   "techStack": {
     "sectionLabel": "Technology stack",
     "headline1": "Built on",
@@ -438,7 +543,7 @@
     "headline1": "Ready to bring order",
     "headline2": "to your telephony?",
     "subheadline": "Request a demo or deploy Asteraid yourself — the initialization wizard will guide you in 5 minutes.",
-    "ctaPrimary": "Request Demo",
+    "ctaPrimary": "Try for Free",
     "ctaSecondary": "Documentation",
     "trust": [
       { "icon": "🔒", "label": "JWT + bcrypt" },
@@ -451,9 +556,13 @@
     "description": "Professional web platform for Asterisk PBX administration.",
     "version": "by Profliga SRL · v3.1",
     "navigation": "Navigation",
-    "landingStack": "Landing Stack",
+    "resources": "Resources",
+    "resourceDocs": "Documentation",
+    "resourceChangelog": "Changelog",
+    "resourceSupport": "Support",
+    "resourcePrivacy": "Privacy Policy",
     "contact": "Contact",
     "copyright": "Profliga SRL. All rights reserved.",
-    "systemOnline": "System online · v2026.02.21"
+    "systemOnline": "System online"
   }
 }

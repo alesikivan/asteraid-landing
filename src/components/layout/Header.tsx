@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { useUIStore } from '@/store/useUIStore'
 import LocaleSwitcher from './LocaleSwitcher'
+import Logo from '@/components/ui/Logo'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -42,24 +43,8 @@ export default function Header() {
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '64px' }}>
           {/* Logo */}
-          <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <div style={{
-              width: '32px', height: '32px',
-              background: 'linear-gradient(135deg, #00b4d8, #0090b8)',
-              borderRadius: '6px',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-            }}>
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <circle cx="9" cy="9" r="3" fill="#06090f"/>
-                <path d="M9 2v2M9 14v2M2 9h2M14 9h2M4.05 4.05l1.41 1.41M12.54 12.54l1.41 1.41M4.05 13.95l1.41-1.41M12.54 5.46l1.41-1.41"
-                  stroke="#06090f" strokeWidth="1.5" strokeLinecap="round"/>
-              </svg>
-            </div>
-            <span style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '22px', fontWeight: 700,
-              letterSpacing: '0.05em', color: 'var(--text-primary)',
-            }}>ASTERAID</span>
+          <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+            <Logo height={28} />
           </Link>
 
           {/* Desktop nav */}

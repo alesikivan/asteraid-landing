@@ -46,7 +46,7 @@ export default function CTA() {
           </a>
         </div>
 
-        <div style={{
+        {/* <div style={{
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           gap: '32px', flexWrap: 'wrap',
           paddingTop: '32px', borderTop: '1px solid var(--border-subtle)',
@@ -57,7 +57,7 @@ export default function CTA() {
               <span>{b.label}</span>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   )
