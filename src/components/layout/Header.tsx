@@ -16,7 +16,7 @@ export default function Header() {
     { label: t('features'), href: '#features' },
     { label: t('howItWorks'), href: '#how-it-works' },
     { label: t('benefits'), href: '#benefits' },
-    { label: t('techStack'), href: '#tech-stack' },
+    { label: t('screenshots'), href: '#screenshots' },
     { label: t('faq'), href: '#faq' },
   ]
 
