@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import { useTranslations } from 'next-intl'
-import Image from 'next/image'
+import ScreenshotImage from '@/components/ui/ScreenshotImage'
 
 export default function Hero() {
   const t = useTranslations('hero')
@@ -154,16 +154,16 @@ export default function Hero() {
 
 function DashboardMockup({ t }: { t: ReturnType<typeof useTranslations<'hero'>> }) {
   return (
-    <Image
-      src="/system_ptohos/home_page.png"
-      alt={t('dashboardTitle')}
-      width={1280}
-      height={800}
-      sizes="(max-width: 900px) 100vw, 50vw"
-      style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '12px' }}
-      quality={80}
-      priority
-      className="animate-float"
-    />
+    <div className="animate-float">
+      <ScreenshotImage
+        src="/system_ptohos/home_page.png"
+        alt={t('dashboardTitle')}
+        width={1280}
+        height={800}
+        sizes="(max-width: 900px) 100vw, 50vw"
+        quality={80}
+        priority
+      />
+    </div>
   )
 }

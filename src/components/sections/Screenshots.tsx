@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
-import Image from 'next/image'
+import ScreenshotImage from '@/components/ui/ScreenshotImage'
 
 export default function Screenshots() {
   const t = useTranslations('screenshots')
@@ -101,13 +101,12 @@ export default function Screenshots() {
           </div>
 
           {/* Screenshot */}
-          <Image
+          <ScreenshotImage
             src={`/system_ptohos/${current.image}`}
             alt={current.title}
             width={1280}
             height={800}
             sizes="(max-width: 960px) 100vw, 65vw"
-            style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '12px' }}
             quality={80}
           />
         </div>
