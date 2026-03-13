@@ -501,6 +501,84 @@
       "Luxon"
     ]
   },
+  "screenshots": {
+    "sectionLabel": "Platform in action",
+    "headline1": "See what",
+    "headline2": "Asteraid looks like",
+    "subheadline": "Real screenshots from the live system — no mockups, no stock photos.",
+    "items": [
+      {
+        "id": "dialplan",
+        "tab": "Dialplan Editor",
+        "title": "Visual Dialplan Editor",
+        "description": "Build complex call routing without touching a single line of Asterisk config. Drag-and-drop blocks connect visually and generate real dialplan automatically.",
+        "items": [
+          "Drag-and-drop routing blocks: Queue, Hangup, Sound, Menu, Outbound",
+          "Visual arrows between blocks — see the full call flow at a glance",
+          "Generates valid Asterisk dialplan in real time",
+          "Switch between visual and JSON/text view",
+          "Save as reusable Rules templates"
+        ],
+        "image": "dialplan.png"
+      },
+      {
+        "id": "pbx_editor",
+        "tab": "Config Editor",
+        "title": "PBX Configuration File Editor",
+        "description": "A full Monaco-based code editor (the same engine as VS Code) for direct Asterisk config file management — with syntax highlighting and file switching.",
+        "items": [
+          "Browse and edit all Asterisk .conf files in-browser",
+          "Monaco editor with syntax highlighting",
+          "Switch between system and client config files",
+          "View system-config.file before applying changes",
+          "Fullscreen editing mode"
+        ],
+        "image": "pbx_editor.png"
+      },
+      {
+        "id": "backup",
+        "tab": "Backup",
+        "title": "Backup & Data Protection",
+        "description": "Automated scheduled backups with AES encryption. Configure interval, time, and path — then let Asteraid handle the rest.",
+        "items": [
+          "Flexible schedule: every day, 3 days, week, 2 weeks, or month",
+          "Set backup time and target path",
+          "Encryption key management for database DUMP",
+          "One-click full database export (DUMP)",
+          "Auto-backup status indicator"
+        ],
+        "image": "backup.png"
+      },
+      {
+        "id": "activity_logs",
+        "tab": "Activity Log",
+        "title": "Full Audit Trail",
+        "description": "Every change made in the system is logged with the user, timestamp, entity, and action type. Filter by user or entity, search by changes.",
+        "items": [
+          "Actions: Create, Update, Remove — color-coded",
+          "Shows which user performed each action",
+          "Entity type: Rules, Dialplan blocks, Extensions, etc.",
+          "Precise timestamp for every event",
+          "Filter by period, user, and entity"
+        ],
+        "image": "activity_logs.png"
+      },
+      {
+        "id": "activity_log_diff",
+        "tab": "Change Diff",
+        "title": "Before / After Change View",
+        "description": "Click any log entry to see the exact diff of what was changed — side-by-side view of the previous and new configuration state.",
+        "items": [
+          "Side-by-side Before / After diff view",
+          "Highlighted changed lines",
+          "Full config context around each change",
+          "Exact timestamp and author",
+          "Works for all entity types in the system"
+        ],
+        "image": "activity_log.png"
+      }
+    ]
+  },
   "faq": {
     "sectionLabel": "FAQ",
     "headline": "Frequently Asked Questions",

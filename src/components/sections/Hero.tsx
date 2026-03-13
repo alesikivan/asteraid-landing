@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import { useTranslations } from 'next-intl'
+import Image from 'next/image'
 
 export default function Hero() {
   const t = useTranslations('hero')
@@ -153,114 +154,16 @@ export default function Hero() {
 
 function DashboardMockup({ t }: { t: ReturnType<typeof useTranslations<'hero'>> }) {
   return (
-    <div style={{
-      background: 'var(--bg-card)',
-      border: '1px solid rgba(0,180,216,0.2)',
-      borderRadius: '16px', overflow: 'hidden',
-      boxShadow: '0 0 80px rgba(0,180,216,0.08), 0 40px 80px rgba(0,0,0,0.5)',
-    }} className="animate-float">
-      {/* Chrome */}
-      <div style={{
-        background: 'var(--bg-elevated)', padding: '12px 16px',
-        display: 'flex', alignItems: 'center', gap: '8px',
-        borderBottom: '1px solid var(--border)',
-      }}>
-        <div style={{ display: 'flex', gap: '6px' }}>
-          {['#ef4444','#f59e0b','#22c55e'].map((c, i) => (
-            <div key={i} style={{ width: '10px', height: '10px', borderRadius: '50%', background: c }} />
-          ))}
-        </div>
-        <div style={{
-          flex: 1, background: 'var(--bg-card)', borderRadius: '4px',
-          padding: '4px 12px', fontFamily: 'var(--font-mono)',
-          fontSize: '11px', color: 'var(--text-muted)',
-        }}>{t('dashboardUrl')}</div>
-      </div>
-
-      {/* Content */}
-      <div style={{ padding: '16px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
-          <span style={{ fontFamily: 'var(--font-display)', fontSize: '16px', fontWeight: 700, letterSpacing: '0.05em' }}>
-            {t('dashboardTitle')}
-          </span>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <span className="status-dot" />
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: '#22c55e' }}>{t('live')}</span>
-          </div>
-        </div>
-
-        {/* Metrics */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '10px', marginBottom: '16px' }}>
-          {[
-            { label: t('stations'), value: '4', color: '#00b4d8', trend: '+1' },
-            { label: t('extensions'), value: '124', color: '#22c55e', trend: t('online') },
-            { label: t('trunks'), value: t('trunksValue'), color: '#22c55e', trend: t('trunksStatus') },
-          ].map(m => (
-            <div key={m.label} style={{
-              background: 'var(--bg-elevated)', border: '1px solid var(--border-subtle)',
-              borderRadius: '8px', padding: '10px',
-            }}>
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', color: 'var(--text-muted)', marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                {m.label}
-              </div>
-              <div style={{ fontFamily: 'var(--font-display)', fontSize: '22px', fontWeight: 700, color: m.color }}>{m.value}</div>
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', color: m.color, opacity: 0.7 }}>{m.trend}</div>
-            </div>
-          ))}
-        </div>
-
-        {/* Chart */}
-        <div style={{
-          background: 'var(--bg-elevated)', border: '1px solid var(--border-subtle)',
-          borderRadius: '8px', padding: '10px', marginBottom: '12px',
-          height: '72px', position: 'relative', overflow: 'hidden',
-        }}>
-          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '6px' }}>
-            {t('ramUsage')}
-          </div>
-          <div style={{ display: 'flex', alignItems: 'flex-end', gap: '3px', height: '40px' }}>
-            {[35,42,38,55,48,60,52,45,58,65,54,62,48,55,60,58,52,64,70,65,58,72,68,62,75].map((h, i) => (
-              <div key={i} style={{
-                flex: 1, height: `${h}%`,
-                background: `rgba(0,180,216,${0.3 + (h / 100) * 0.5})`,
-                borderRadius: '2px', minWidth: '2px',
-              }} />
-            ))}
-          </div>
-        </div>
-
-        {/* Station list */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-          {[
-            { name: 'pbx-main.corp.local', status: 'online', load: 45 },
-            { name: 'pbx-branch-1.corp', status: 'online', load: 22 },
-            { name: 'pbx-branch-2.corp', status: 'maintenance', load: 0 },
-          ].map(s => (
-            <div key={s.name} style={{
-              display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-              padding: '6px 10px',
-              background: 'var(--bg-elevated)', borderRadius: '6px', border: '1px solid var(--border-subtle)',
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <div style={{
-                  width: '6px', height: '6px', borderRadius: '50%',
-                  background: s.status === 'online' ? '#22c55e' : '#f59e0b',
-                }} />
-                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-secondary)' }}>
-                  {s.name}
-                </span>
-              </div>
-              <span style={{
-                fontFamily: 'var(--font-mono)', fontSize: '10px',
-                color: s.status === 'online' ? '#22c55e' : '#f59e0b',
-                textTransform: 'uppercase',
-              }}>
-                {s.status === 'online' ? `${s.load}%` : t('maintenance')}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
+    <Image
+      src="/system_ptohos/home_page.png"
+      alt={t('dashboardTitle')}
+      width={1280}
+      height={800}
+      sizes="(max-width: 900px) 100vw, 50vw"
+      style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '12px' }}
+      quality={80}
+      priority
+      className="animate-float"
+    />
   )
 }
