@@ -68,7 +68,7 @@ export default function RoleDashboards() {
         </div>
 
         {/* Role detail */}
-        <div style={{ display: 'grid', gap: '32px', alignItems: 'center' }} className="role-grid">
+        <div style={{ display: 'grid', gap: '32px', alignItems: 'stretch' }} className="role-grid">
           {/* Features */}
           <div style={{
             background: 'var(--bg-card)', border: `1px solid ${color}22`,

@@ -141,11 +141,12 @@ export default function BeforeAfter() {
           {/* Footer summary */}
           <div style={{
             borderTop: '1px solid var(--border)',
-            display: 'grid', gridTemplateColumns: '1fr 1fr',
+            display: 'grid', gridTemplateColumns: '200px 1fr 1fr',
           }}>
+            <div style={{ background: 'var(--bg-elevated)' }} />
             <div style={{
               padding: '20px 24px', background: 'rgba(239,68,68,0.05)',
-              borderRight: '1px solid var(--border)',
+              borderLeft: '1px solid var(--border)',
               display: 'flex', alignItems: 'center', gap: '10px',
             }}>
               <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: '#f87171' }}>
@@ -154,6 +155,7 @@ export default function BeforeAfter() {
             </div>
             <div style={{
               padding: '20px 24px', background: 'rgba(0,180,216,0.05)',
+              borderLeft: '1px solid var(--border)',
               display: 'flex', alignItems: 'center', gap: '10px',
             }}>
               <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--accent-primary)' }}>

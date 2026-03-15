@@ -34,7 +34,7 @@ export default function HowItWorks() {
             pointerEvents: 'none',
           }} className="connector-line" />
 
-          <div style={{ display: 'grid', gap: '24px' }} className="steps-grid">
+          <div style={{ display: 'grid', gap: '24px', alignItems: 'stretch' }} className="steps-grid">
             {steps.map((step, i) => (
               <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
                 <div style={{
@@ -49,13 +49,12 @@ export default function HowItWorks() {
                 </div>
                 <div style={{
                   background: 'var(--bg-card)', border: '1px solid var(--border)',
-                  borderRadius: '12px', padding: '24px', width: '100%',
+                  borderRadius: '12px', padding: '24px', width: '100%', flex: 1,
                   transition: 'all 0.3s ease',
                 }}
                 onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(0,180,216,0.3)'; e.currentTarget.style.boxShadow = '0 0 24px rgba(0,180,216,0.08)' }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.boxShadow = 'none' }}
                 >
-                  <div className="step-number" style={{ marginBottom: '12px', textAlign: 'left' }}>{step.step}</div>
                   <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '22px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '10px', letterSpacing: '0.02em' }}>
                     {step.title}
                   </h3>
