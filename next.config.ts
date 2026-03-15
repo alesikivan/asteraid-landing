@@ -8,7 +8,7 @@ const isProd = process.env.NODE_ENV === 'production'
 
 const nextConfig: NextConfig = {
   images: {
-    qualities: [75, 80],
+    unoptimized: true,
   },
   output: 'export',
   distDir: 'dist',
