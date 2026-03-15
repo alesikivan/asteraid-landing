@@ -8,11 +8,15 @@ const isProd = process.env.NODE_ENV === 'production'
 
 const nextConfig: NextConfig = {
   images: {
-    unoptimized: true,
+    loader: 'custom',
+    loaderFile: './src/imageLoader.ts',
   },
   output: 'export',
   distDir: 'dist',
-  basePath: isProd ? '/asteraid-landing' : ''
+  basePath: isProd ? '/asteraid-landing' : '',
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isProd ? '/asteraid-landing' : '',
+  },
 }
 
 export default withNextIntl(nextConfig)
