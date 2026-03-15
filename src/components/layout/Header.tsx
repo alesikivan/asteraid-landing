@@ -112,12 +112,6 @@ export default function Header() {
               }}
             >{item.label}</a>
           ))}
-          <div style={{ marginTop: '16px', display: 'flex', gap: '12px', alignItems: 'center' }}>
-            <a href="#contact" className="btn-primary" style={{ flex: 1, justifyContent: 'center' }}>
-              {t('requestDemo')}
-            </a>
-            <LocaleSwitcher />
-          </div>
         </div>
       )}
 
