@@ -1,7 +1,5 @@
-// next-intl middleware redirects `/` → `/en` (default locale, as-needed prefix).
-// This file should never actually render.
-'use client'
-
+// Root index.html is replaced by the English build (dist/en/) during CI.
+// This file is a placeholder and should never be visible in production.
 export default function RootPage() {
   return null
 }
