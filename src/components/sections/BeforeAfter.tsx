@@ -235,12 +235,12 @@ export default function BeforeAfter() {
             padding: 0;
           }
           .ba-col-task {
-            padding: 14px 16px 10px !important;
+            padding: 8px 12px 6px !important;
             background: var(--bg-elevated) !important;
             border-left: none !important;
           }
           .ba-col-val {
-            padding: 10px 16px !important;
+            padding: 6px 12px !important;
             border-left: none !important;
             border-top: 1px solid var(--border-subtle);
           }

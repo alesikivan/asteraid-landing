@@ -73,7 +73,7 @@ export default function Hero() {
   const BADGES = ['Asterisk', 'Active Directory', 'Multi-Station', 'Real-time', 'WebSocket', 'SSH Terminal']
 
   return (
-    <section style={{
+    <section className="hero-section" style={{
       position: 'relative', minHeight: '100vh',
       display: 'flex', alignItems: 'center',
       overflow: 'hidden', paddingTop: '80px',
@@ -83,7 +83,7 @@ export default function Hero() {
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 70% 60% at 50% 30%, rgba(0,180,216,0.08) 0%, transparent 70%)', pointerEvents: 'none' }} />
       <div style={{ position: 'absolute', left: 0, right: 0, height: '1px', background: 'linear-gradient(90deg, transparent, rgba(0,180,216,0.3), transparent)', pointerEvents: 'none' }} className="animate-scan" />
 
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '80px 24px', position: 'relative', zIndex: 2, width: '100%' }}>
+      <div className="hero-inner" style={{ maxWidth: '1280px', margin: '0 auto', padding: '80px 24px', position: 'relative', zIndex: 2, width: '100%' }}>
         <div style={{ display: 'grid', gap: '64px', alignItems: 'center' }} className="hero-grid">
           {/* Text */}
           <div>
@@ -146,6 +146,8 @@ export default function Hero() {
         @media (max-width: 900px) {
           .hero-grid { grid-template-columns: 1fr !important; }
           .hero-right { display: none; }
+          .hero-section { min-height: unset !important; align-items: flex-start !important; }
+          .hero-inner { padding-top: 25px !important; padding-bottom: 40px !important; }
         }
       `}</style>
     </section>
