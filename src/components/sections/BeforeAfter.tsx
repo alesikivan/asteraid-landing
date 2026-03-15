@@ -138,8 +138,8 @@ export default function BeforeAfter() {
             </div>
           ))}
 
-          {/* Footer summary */}
-          <div style={{
+          {/* Footer summary — hidden on mobile */}
+          <div className="ba-footer-summary" style={{
             borderTop: '1px solid var(--border)',
             display: 'grid', gridTemplateColumns: '200px 1fr 1fr',
           }}>
@@ -165,6 +165,33 @@ export default function BeforeAfter() {
           </div>
 
         </div>
+
+        {/* Mobile-only summary block */}
+        <div className="ba-mobile-summary">
+          <div className="ba-mobile-summary-col ba-mobile-summary-before">
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.12em', color: '#f87171', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/>
+              </svg>
+              {t('colBefore')}
+            </span>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: '#f87171' }}>
+              {t('summaryBefore')}
+            </span>
+          </div>
+          <div className="ba-mobile-summary-col ba-mobile-summary-after">
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--accent-primary)', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+              {t('colAfter')}
+            </span>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--accent-primary)' }}>
+              {t('summaryAfter')}
+            </span>
+          </div>
+        </div>
+
       </div>
 
       <style>{`
@@ -176,6 +203,29 @@ export default function BeforeAfter() {
         .ba-header-cell { padding: 14px 20px; }
         .ba-col-task { padding: 18px 20px; }
         .ba-col-val  { padding: 18px 20px; }
+
+        /* ── Summary cards (all screens) ── */
+        .ba-footer-summary { display: none !important; }
+        .ba-mobile-summary {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 12px;
+          margin-top: 12px;
+        }
+        .ba-mobile-summary-col {
+          padding: 16px;
+          border-radius: 10px;
+          display: flex;
+          flex-direction: column;
+        }
+        .ba-mobile-summary-before {
+          background: rgba(239,68,68,0.05);
+          border: 1px solid rgba(239,68,68,0.18);
+        }
+        .ba-mobile-summary-after {
+          background: rgba(0,180,216,0.05);
+          border: 1px solid rgba(0,180,216,0.2);
+        }
 
         /* ── Mobile layout ── */
         @media (max-width: 700px) {

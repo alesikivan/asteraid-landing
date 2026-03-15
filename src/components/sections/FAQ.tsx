@@ -36,11 +36,11 @@ export default function FAQ() {
                   onClick={() => setOpen(isOpen ? null : item.id)}
                   style={{
                     width: '100%', padding: '20px 24px', background: 'none', border: 'none',
-                    display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                    display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between',
                     gap: '16px', cursor: 'pointer', textAlign: 'left',
                   }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+                  <div className="flex flex-col gap-1.5 md:flex-row md:items-center md:gap-3.5">
                     <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--accent-primary)', opacity: 0.6, flexShrink: 0 }}>
                       {String(i + 1).padStart(2, '0')}
                     </span>
@@ -51,7 +51,7 @@ export default function FAQ() {
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
                     stroke={isOpen ? 'var(--accent-primary)' : 'var(--text-muted)'}
                     strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                    style={{ transform: isOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s ease', flexShrink: 0 }}>
+                    style={{ transform: isOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s ease', flexShrink: 0, marginTop: '3px' }}>
                     <polyline points="6 9 12 15 18 9"/>
                   </svg>
                 </button>

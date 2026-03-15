@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { useUIStore } from '@/store/useUIStore'
 import LocaleSwitcher from './LocaleSwitcher'
@@ -43,9 +42,9 @@ export default function Header() {
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '64px' }}>
           {/* Logo */}
-          <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+          <div onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
             <Logo height={28} />
-          </Link>
+          </div>
 
           {/* Desktop nav */}
           <nav style={{ display: 'flex', alignItems: 'center', gap: '28px' }} className="hidden-mobile">
