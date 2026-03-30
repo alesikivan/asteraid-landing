@@ -52,6 +52,43 @@
     "subheadline": "From real-time monitoring to SSH terminal — everything a telephony engineer needs.",
     "items": [
       {
+        "id": "ruletest",
+        "tag": "Rule Test",
+        "title": "Dialplan Rule Testing",
+        "description": "Simulate a call flow through the dialplan directly from the Visual Dialplan Editor, using the administrator's phone to emulate an incoming call.",
+        "items": [
+          "Run call simulation from the editor without leaving the UI",
+          "Use the admin's phone as the emulated incoming call source",
+          "Create a full test environment to debug dialplan logic",
+          "Validate routing rules before applying to production",
+          "Catch errors before they reach live infrastructure"
+        ]
+      },
+      {
+        "id": "multilang",
+        "tag": "Multilingual Support",
+        "title": "Multilingual Support",
+        "description": "Multilingual support for voice files at the peer level. Each user can hear IVR prompts and system messages in their own language.",
+        "items": [
+          "Per-peer language assignment for IVR prompts and system messages",
+          "Supported languages: English, Spanish, French, Italian, Japanese, Russian, Swedish",
+          "Fully configurable interface language",
+          "Support for custom dictionaries to display GUI elements in any language"
+        ]
+      },
+      {
+        "id": "vmboot",
+        "tag": "Version History",
+        "title": "Version History & VM Boot Mode",
+        "description": "Full version history support for the entire configuration. A backup snapshot is created every time the \"Apply\" button is pressed.",
+        "items": [
+          "Automatic snapshot on every configuration apply",
+          "Browse and restore any previous configuration state",
+          "Virtual Machine Boot mode support",
+          "Never lose a working configuration"
+        ]
+      },
+      {
         "id": "realtime",
         "tag": "Real-time Dashboard",
         "title": "Real-time Monitoring",
