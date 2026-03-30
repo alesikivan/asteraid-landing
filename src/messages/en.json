@@ -65,15 +65,16 @@
         ]
       },
       {
-        "id": "multilang",
-        "tag": "Multilingual Support",
-        "title": "Multilingual Support",
-        "description": "Multilingual support for voice files at the peer level. Each user can hear IVR prompts and system messages in their own language.",
+        "id": "disaster",
+        "tag": "Disaster Recovery",
+        "title": "Disaster Recovery Readiness",
+        "description": "Everything needed to restore the full configuration of the network of PBXs is stored in a single archive. All you need is a valid backup, the decryption key, and a new infrastructure to start. From new hardware to a fully operational service in just a few minutes.",
         "items": [
-          "Per-peer language assignment for IVR prompts and system messages",
-          "Supported languages: English, Spanish, French, Italian, Japanese, Russian, Swedish",
-          "Fully configurable interface language",
-          "Support for custom dictionaries to display GUI elements in any language"
+          "Entire PBX network config in one encrypted archive — stations, trunks, dialplans, users, certificates",
+          "Restore requires only the backup file and decryption key — no manual reconfiguration",
+          "New hardware → fully operational telephony in minutes, not days",
+          "AES-encrypted backup with centralized key management",
+          "Scheduled automatic backups and one-click full DUMP export"
         ]
       },
       {
@@ -86,6 +87,18 @@
           "Browse and restore any previous configuration state",
           "Virtual Machine Boot mode support",
           "Never lose a working configuration"
+        ]
+      },
+      {
+        "id": "multilang",
+        "tag": "Multilingual Support",
+        "title": "Multilingual Support",
+        "description": "Multilingual support for voice files at the peer level. Each user can hear IVR prompts and system messages in their own language.",
+        "items": [
+          "Per-peer language assignment for IVR prompts and system messages",
+          "Supported languages: English, Spanish, French, Italian, Japanese, Russian, Swedish",
+          "Fully configurable interface language",
+          "Support for custom dictionaries to display GUI elements in any language"
         ]
       },
       {

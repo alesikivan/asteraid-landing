@@ -19,19 +19,23 @@ const ICON_MAP: Record<string, React.ReactNode> = {
   'play-circle': <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>,
   globe: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>,
   'rotate-ccw': <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.9"/></svg>,
+  archive: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg>,
 }
 
 const FEATURE_ICONS: Record<string, string> = {
-  ruletest: 'play-circle', multilang: 'globe', vmboot: 'rotate-ccw',
+  ruletest: 'play-circle', disaster: 'archive', vmboot: 'rotate-ccw', multilang: 'globe',
   realtime: 'activity', multistation: 'server', dialplan: 'git-branch',
   cdr: 'phone-call', pbx: 'phone', users: 'users', ad: 'building',
   terminal: 'terminal', firewall: 'shield', editor: 'code', ssl: 'lock', logger: 'file-text',
 }
 
+const HIDDEN_IDS = new Set(['users'])
+
 export default function Features() {
   const t = useTranslations('features')
-  const items = t.raw('items') as Array<{ id: string; tag: string; title: string; description: string; items: string[] }>
-  const [active, setActive] = useState<Set<string>>(() => new Set(items.slice(0, 3).map(f => f.id)))
+  const allItems = t.raw('items') as Array<{ id: string; tag: string; title: string; description: string; items: string[] }>
+  const items = allItems.filter(f => !HIDDEN_IDS.has(f.id))
+  const [active, setActive] = useState<Set<string>>(() => new Set(['ruletest', 'disaster', 'vmboot']))
 
   return (
     <section id="features" style={{ padding: '100px 24px', position: 'relative' }}>
