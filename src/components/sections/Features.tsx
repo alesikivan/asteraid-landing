@@ -30,8 +30,8 @@ const FEATURE_ICONS: Record<string, string> = {
 
 export default function Features() {
   const t = useTranslations('features')
-  const [active, setActive] = useState<string | null>(null)
   const items = t.raw('items') as Array<{ id: string; tag: string; title: string; description: string; items: string[] }>
+  const [active, setActive] = useState<Set<string>>(() => new Set(items.slice(0, 3).map(f => f.id)))
 
   return (
     <section id="features" style={{ padding: '100px 24px', position: 'relative' }}>
@@ -54,13 +54,13 @@ export default function Features() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '16px' }}>
           {items.map((feature) => (
             <div key={feature.id}
-              onClick={() => setActive(active === feature.id ? null : feature.id)}
+              onClick={() => setActive(prev => { const next = new Set(prev); next.has(feature.id) ? next.delete(feature.id) : next.add(feature.id); return next })}
               style={{
-                background: active === feature.id ? 'var(--bg-elevated)' : 'var(--bg-card)',
-                border: `1px solid ${active === feature.id ? 'rgba(0,180,216,0.35)' : 'var(--border)'}`,
+                background: active.has(feature.id) ? 'var(--bg-elevated)' : 'var(--bg-card)',
+                border: `1px solid ${active.has(feature.id) ? 'rgba(0,180,216,0.35)' : 'var(--border)'}`,
                 borderRadius: '12px', padding: '24px', cursor: 'pointer',
                 transition: 'all 0.3s ease',
-                boxShadow: active === feature.id ? '0 0 30px rgba(0,180,216,0.1)' : 'none',
+                boxShadow: active.has(feature.id) ? '0 0 30px rgba(0,180,216,0.1)' : 'none',
               }}
               onMouseEnter={e => { if (active !== feature.id) e.currentTarget.style.borderColor = 'rgba(0,180,216,0.2)' }}
               onMouseLeave={e => { if (active !== feature.id) e.currentTarget.style.borderColor = 'var(--border)' }}
@@ -78,7 +78,7 @@ export default function Features() {
                   <span className="tag">{feature.tag}</span>
                 </div>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                  style={{ transform: active === feature.id ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s ease', flexShrink: 0 }}>
+                  style={{ transform: active.has(feature.id) ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s ease', flexShrink: 0 }}>
                   <polyline points="6 9 12 15 18 9"/>
                 </svg>
               </div>
@@ -90,7 +90,7 @@ export default function Features() {
                 {feature.description}
               </p>
 
-              {active === feature.id && (
+              {active.has(feature.id) && (
                 <div style={{ marginTop: '16px', borderTop: '1px solid var(--border)', paddingTop: '16px' }}>
                   <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
                     {feature.items.map((item, i) => (
