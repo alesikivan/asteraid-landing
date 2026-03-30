@@ -1,5 +1,6 @@
 import { setRequestLocale } from 'next-intl/server'
 import Hero from '@/components/sections/Hero'
+import Concepts from '@/components/sections/Concepts'
 import Stats from '@/components/sections/Stats'
 import Features from '@/components/sections/Features'
 import Screenshots from '@/components/sections/Screenshots'
@@ -23,6 +24,7 @@ export default async function HomePage({ params }: Props) {
   return (
     <>
       <Hero />
+      <Concepts />
       <Stats />
       <SystemRequirements />
       <Features />

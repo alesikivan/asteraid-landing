@@ -33,6 +33,22 @@
     "online": "онлайн",
     "maintenance": "обслуживание"
   },
+  "concepts": {
+    "sectionLabel": "Key Concepts",
+    "headline": "Как устроен Asteraid?",
+    "subheadline": "Платформа разворачивается в виде двух Docker-контейнеров: сервер конфигураций формирует и доставляет настройки на станции через SSH, MongoDB обеспечивает их надёжное хранение. Результат — единая точка управления всей инфраструктурой Asterisk.",
+    "configServer": "Configuration Server",
+    "mongoServer": "MongoDB Server",
+    "configurationsLabel": "Configurations",
+    "sshLabel": "Transfer via SSH",
+    "configPoints": ["Генерация конфигураций", "Отправка по SSH"],
+    "mongoPoints": ["Хранение конфигураций"],
+    "pbxTargets": [
+      { "label": "Physical Server", "type": "physical" },
+      { "label": "Virtual Machine", "type": "vm" },
+      { "label": "Virtual Machine", "type": "vm" }
+    ]
+  },
   "stats": {
     "sectionLabel": "Цифры платформы",
     "headline": "Всё, что нужно для управления PBX",
