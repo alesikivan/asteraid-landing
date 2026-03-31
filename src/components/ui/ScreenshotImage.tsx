@@ -56,6 +56,7 @@ export default function ScreenshotImage({
       <div
         style={{ position: 'relative', borderRadius, overflow: 'hidden', cursor: 'pointer' }}
         onClick={() => setFullscreen(true)}
+        className="screenshot-container"
       >
         {/* Skeleton */}
         {!loaded && (
@@ -226,7 +227,7 @@ export default function ScreenshotImage({
       )}
 
       <style>{`
-        div:hover .fullscreen-overlay {
+        .screenshot-container:hover .fullscreen-overlay {
           opacity: 1 !important;
         }
         .skeleton-shimmer {
