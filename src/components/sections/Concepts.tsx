@@ -332,23 +332,32 @@ export default function Concepts() {
           ))}
         </div>
 
-        {/* ── Bottom Connections ── */}
-        <div className="cpts-bottom-conn">
-          <div className="cpts-conn-pill cpts-conn-pill--green">
-            <svg width="18" height="14" viewBox="0 0 24 18" fill="none">
-              <path d="M1 9c2-4 5-7 7-7s3 4 4 7-1 9 2 9 5-3 7-7" stroke="#81C784" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-              <circle cx="1"  cy="9" r="1.5" fill="#81C784"/>
-              <circle cx="23" cy="9" r="1.5" fill="#81C784"/>
-            </svg>
-            <span>{t('mediaRtpLabel')}</span>
-          </div>
-          <div className="cpts-conn-pill cpts-conn-pill--purple">
-            <svg width="16" height="14" viewBox="0 0 20 16" fill="none">
-              <polyline points="6,1 1,8 6,15"  stroke="#9C6FE4" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-              <polyline points="14,1 19,8 14,15" stroke="#9C6FE4" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-              <line x1="12" y1="1" x2="8" y2="15" stroke="#9C6FE4" strokeWidth="1.8" strokeLinecap="round"/>
-            </svg>
-            <span>{t('commandsLabel')}</span>
+        {/* ── Bottom Connections with upward arrows to PBX boxes ── */}
+        <div className="cpts-conn-section">
+          {/*
+            SVG spans only the GAP between PBX grid bottom and pills top.
+            y=0  → arrowheads (just below PBX boxes)
+            y=70 → where lines touch the pill tops (pills are in normal flow BELOW this SVG)
+            PBX centers: left x=150, center x=450, right x=750
+          */}
+          {/* Pills — normal flow BELOW the SVG, no overlap */}
+          <div className="cpts-pills-wrap">
+            <div className="cpts-conn-pill cpts-conn-pill--green">
+              <svg width="18" height="14" viewBox="0 0 24 18" fill="none">
+                <path d="M1 9c2-4 5-7 7-7s3 4 4 7-1 9 2 9 5-3 7-7" stroke="#81C784" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                <circle cx="1"  cy="9" r="1.5" fill="#81C784"/>
+                <circle cx="23" cy="9" r="1.5" fill="#81C784"/>
+              </svg>
+              <span>{t('mediaRtpLabel')}</span>
+            </div>
+            <div className="cpts-conn-pill cpts-conn-pill--purple">
+              <svg width="16" height="14" viewBox="0 0 20 16" fill="none">
+                <polyline points="6,1 1,8 6,15"   stroke="#9C6FE4" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                <polyline points="14,1 19,8 14,15" stroke="#9C6FE4" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                <line x1="12" y1="1" x2="8" y2="15" stroke="#9C6FE4" strokeWidth="1.8" strokeLinecap="round"/>
+              </svg>
+              <span>{t('commandsLabel')}</span>
+            </div>
           </div>
         </div>
 
@@ -790,12 +799,26 @@ export default function Concepts() {
         }
 
         /* ── Bottom Connections ── */
-        .cpts-bottom-conn {
+        .cpts-conn-section {
+          position: relative;
+          width: 100%;
+        }
+        .cpts-conn-svg {
+          width: 100%;
+          height: 130px;
+          display: block;
+        }
+        .cpts-pills-wrap {
           display: flex;
           flex-direction: column;
           align-items: center;
           gap: 10px;
+          width: 100%;
+          max-width: 420px;
+          margin: 24px auto 0;
+          pointer-events: none;
         }
+        .cpts-pills-wrap > * { pointer-events: auto; }
         .cpts-conn-pill {
           display: inline-flex;
           align-items: center;

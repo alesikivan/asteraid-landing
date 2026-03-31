@@ -46,7 +46,7 @@
     "sshLabel": "Transfer via SSH",
     "sshBannerLabel": "Конфигурации, медиа и команды через SSH",
     "mediaRtpLabel": "Медиа (RTP)",
-    "commandsLabel": "Команды",
+    "commandsLabel": "SIP Signaling",
     "configPoints": ["Генерация конфигураций", "Отправка по SSH", "Web Interface"],
     "mongoPoints": ["Хранение конфигураций"],
     "pbxTargets": [
