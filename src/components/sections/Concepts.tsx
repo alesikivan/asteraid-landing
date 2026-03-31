@@ -226,7 +226,7 @@ export default function Concepts() {
                   <div className="cpts-conn-track">
                     <div className="cpts-conn-line" />
                     <div className="cpts-conn-particle" />
-                    <svg width="9" height="13" viewBox="0 0 9 13" fill="none" style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)' }}>
+                    <svg width="9" height="13" viewBox="0 0 9 13" fill="none" style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)' }} className="cpts-arrow-svg">
                       <polyline points="1,1 8,6.5 1,12" stroke="rgba(0,180,216,0.7)" strokeWidth="1.5" strokeLinejoin="round" strokeLinecap="round"/>
                     </svg>
                   </div>
@@ -860,7 +860,18 @@ export default function Concepts() {
           .cpts-bidir { transform: rotate(90deg); }
           .cpts-vm-outer { width: 100%; }
           .cpts-docker-grid { grid-template-columns: 1fr !important; }
-          .cpts-conn-arrow { flex-direction: row; }
+          .cpts-conn-arrow { flex-direction: row; align-items: center; gap: 8px; justify-content: center; }
+          .cpts-conn-label { font-size: 9px; white-space: nowrap; order: -1; }
+          .cpts-conn-track { width: 14px; height: 52px; position: relative; display: flex; flex-direction: column; justify-content: flex-start; }
+          .cpts-conn-line { position: absolute; left: 50%; top: 0; width: 1.5px; height: calc(100% - 9px); background: rgba(0,180,216,0.25); transform: translateX(-50%); }
+          .cpts-conn-particle { position: absolute; left: 50%; top: -14px; width: 2px; height: 14px; background: linear-gradient(180deg, transparent, rgba(0,180,216,0.9)); transform: translateX(-50%); animation: cpts-flow-vertical 1.8s linear infinite; }
+          .cpts-arrow-svg { position: absolute !important; right: auto !important; left: 50% !important; bottom: -4px !important; top: auto !important; transform: translateX(-50%) rotate(90deg) !important; }
+          @keyframes cpts-flow-vertical {
+            0%   { top: -14px; opacity: 0; }
+            10%  { opacity: 1; }
+            80%  { opacity: 1; }
+            100% { top: calc(100% - 9px); opacity: 0; }
+          }
           .cpts-pbx-grid { grid-template-columns: 1fr !important; }
           .cpts-fanout-svg { height: 100px; }
         }
