@@ -10,7 +10,7 @@
     "screenshots": "Система",
     "techStack": "Технологии",
     "faq": "FAQ",
-    "requestDemo": "Попробовать бесплатно"
+    "requestDemo": "Загрузить бесплатно"
   },
   "hero": {
     "badge": "Profliga SRL",
@@ -19,7 +19,7 @@
     "headline3": "Один портал —",
     "headline4": "все станции.",
     "subheadline": "Профессиональная веб-платформа для администрирования Asterisk PBX: мониторинг в реальном времени, визуальный редактор диалпланов, история звонков и SSH-терминал прямо в браузере.",
-    "ctaPrimary": "Попробовать бесплатно",
+    "ctaPrimary": "Загрузить бесплатно",
     "ctaSecondary": "Возможности",
     "dashboardUrl": "asteraid.corp.local/dashboard",
     "dashboardTitle": "ADMIN DASHBOARD",
@@ -694,7 +694,7 @@
     "headline1": "Готов навести порядок",
     "headline2": "в своей телефонии?",
     "subheadline": "Запросите демо или разверните Asteraid самостоятельно — мастер инициализации проведёт вас за 5 минут.",
-    "ctaPrimary": "Попробовать бесплатно",
+    "ctaPrimary": "Загрузить бесплатно",
     "ctaSecondary": "Документация",
     "trust": [
       { "icon": "🔒", "label": "JWT + bcrypt" },

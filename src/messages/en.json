@@ -10,7 +10,7 @@
     "screenshots": "System",
     "techStack": "Tech Stack",
     "faq": "FAQ",
-    "requestDemo": "Try for Free"
+    "requestDemo": "Download for Free"
   },
   "hero": {
     "badge": "Profliga SRL · version 3.1",
@@ -19,7 +19,7 @@
     "headline3": "One portal —",
     "headline4": "all stations.",
     "subheadline": "Professional web platform for Asterisk PBX administration: real-time monitoring, visual dialplan editor, call history and SSH terminal right in the browser.",
-    "ctaPrimary": "Try for Free",
+    "ctaPrimary": "Download for Free",
     "ctaSecondary": "All Features",
     "dashboardUrl": "asteraid.corp.local/dashboard",
     "dashboardTitle": "ADMIN DASHBOARD",
@@ -694,7 +694,7 @@
     "headline1": "Ready to bring order",
     "headline2": "to your telephony?",
     "subheadline": "Request a demo or deploy Asteraid yourself — the initialization wizard will guide you in 5 minutes.",
-    "ctaPrimary": "Try for Free",
+    "ctaPrimary": "Download for Free",
     "ctaSecondary": "Documentation",
     "trust": [
       { "icon": "🔒", "label": "JWT + bcrypt" },
