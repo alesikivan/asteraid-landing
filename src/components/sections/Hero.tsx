@@ -81,7 +81,6 @@ export default function Hero() {
       <canvas ref={canvasRef} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' }} />
       <div className="bg-grid" style={{ position: 'absolute', inset: 0, opacity: 0.5, pointerEvents: 'none' }} />
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 70% 60% at 50% 30%, rgba(0,180,216,0.08) 0%, transparent 70%)', pointerEvents: 'none' }} />
-      <div style={{ position: 'absolute', left: 0, right: 0, height: '1px', background: 'linear-gradient(90deg, transparent, rgba(0,180,216,0.3), transparent)', pointerEvents: 'none' }} className="animate-scan" />
 
       <div className="hero-inner" style={{ maxWidth: '1280px', margin: '0 auto', padding: '80px 24px', position: 'relative', zIndex: 2, width: '100%' }}>
         <div style={{ display: 'grid', gap: '64px', alignItems: 'center' }} className="hero-grid">
