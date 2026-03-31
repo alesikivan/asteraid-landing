@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import Image from 'next/image'
 
 interface Props {
@@ -19,14 +20,19 @@ export default function ScreenshotImage({
   alt,
   width,
   height,
-  quality = 80,
+  quality = 100,
   sizes,
   priority,
   borderRadius = '12px',
 }: Props) {
   const [loaded, setLoaded] = useState(false)
   const [fullscreen, setFullscreen] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const aspectRatio = (height / width) * 100
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -104,6 +110,7 @@ export default function ScreenshotImage({
             display: 'block',
             opacity: loaded ? 1 : 0,
             transition: 'opacity 0.4s ease',
+            imageRendering: 'crisp-edges',
           }}
         />
 
@@ -134,7 +141,7 @@ export default function ScreenshotImage({
       </div>
 
       {/* Fullscreen modal */}
-      {fullscreen && (
+      {fullscreen && mounted && createPortal(
         <div
           style={{
             position: 'fixed',
@@ -159,11 +166,12 @@ export default function ScreenshotImage({
               alt={alt}
               width={width}
               height={height}
-              quality={90}
+              quality={100}
               style={{
                 width: '100%',
                 height: '100%',
                 objectFit: 'contain',
+                imageRendering: 'crisp-edges',
               }}
             />
 
@@ -213,7 +221,8 @@ export default function ScreenshotImage({
               }
             }
           `}</style>
-        </div>
+        </div>,
+        document.body
       )}
 
       <style>{`

@@ -79,7 +79,7 @@ export default function Hero() {
       overflow: 'hidden', paddingTop: '80px',
     }}>
       <canvas ref={canvasRef} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' }} />
-      <div className="bg-grid" style={{ position: 'absolute', inset: 0, opacity: 0.5 }} />
+      <div className="bg-grid" style={{ position: 'absolute', inset: 0, opacity: 0.5, pointerEvents: 'none' }} />
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 70% 60% at 50% 30%, rgba(0,180,216,0.08) 0%, transparent 70%)', pointerEvents: 'none' }} />
       <div style={{ position: 'absolute', left: 0, right: 0, height: '1px', background: 'linear-gradient(90deg, transparent, rgba(0,180,216,0.3), transparent)', pointerEvents: 'none' }} className="animate-scan" />
 
@@ -156,14 +156,14 @@ export default function Hero() {
 
 function DashboardMockup({ t }: { t: ReturnType<typeof useTranslations<'hero'>> }) {
   return (
-    <div className="animate-float">
+    <div className="animate-float" style={{ pointerEvents: 'auto' }}>
       <ScreenshotImage
         src="/system_ptohos/home_page.png"
         alt={t('dashboardTitle')}
         width={1280}
         height={800}
         sizes="(max-width: 900px) 100vw, 50vw"
-        quality={80}
+        quality={100}
         priority
       />
     </div>
