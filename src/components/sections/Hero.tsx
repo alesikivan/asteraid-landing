@@ -31,14 +31,83 @@ export default function Hero() {
       })
     }
 
+    const codeSnippets = [
+      'exten => 101,1,Answer()',
+      'exten => 101,2,VoiceMail(u101)',
+      'exten => 100,1,Dial(SIP/101)',
+      'same => n,Dial(SIP/102&SIP/103)',
+      'exten => 200,1,Playback(silence/1)',
+      'exten => *77,1,DeviceState(SIP/101)',
+      'exten => 777,1,VoiceMailMain()',
+      'exten => 999,1,ConfBridge(1,)',
+    ]
+
+    interface CodeText {
+      text: string
+      charIndex: number
+      startTime: number
+      lineIndex: number
+      columnId: number
+    }
+
+    interface CodeColumn {
+      id: number
+      x: number
+      y: number
+      lines: CodeText[]
+    }
+
+    const columns: CodeColumn[] = []
+    const fontFamily = 'Monaco, Courier New, monospace'
+    const fontSize = 13
+    const lineHeight = 20
+
+    // Create 3 non-overlapping column positions
+    const zones = [
+      { xStart: canvas.width * 0.1, xEnd: canvas.width * 0.35 },
+      { xStart: canvas.width * 0.4, xEnd: canvas.width * 0.6 },
+      { xStart: canvas.width * 0.65, xEnd: canvas.width * 0.9 },
+    ]
+
+    for (let i = 0; i < 3; i++) {
+      const zone = zones[i]
+      columns.push({
+        id: i,
+        x: Math.random() * (zone.xEnd - zone.xStart) + zone.xStart,
+        y: Math.random() * (canvas.height * 0.5) + canvas.height * 0.15,
+        lines: [],
+      })
+    }
+
+    const createCodeLine = () => {
+      const column = columns[Math.floor(Math.random() * columns.length)]
+      const snippet = codeSnippets[Math.floor(Math.random() * codeSnippets.length)]
+      column.lines.push({
+        text: snippet,
+        charIndex: 0,
+        startTime: Date.now(),
+        lineIndex: column.lines.length,
+        columnId: column.id,
+      })
+    }
+
+    let codeCreationTimer = setInterval(() => {
+      const totalLines = columns.reduce((acc, col) => acc + col.lines.length, 0)
+      if (totalLines < 15) createCodeLine()
+    }, 1500)
+
+    createCodeLine()
+
     let raf: number
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
+
       nodes.forEach(n => {
         n.x += n.vx; n.y += n.vy
         if (n.x < 0 || n.x > canvas.width) n.vx *= -1
         if (n.y < 0 || n.y > canvas.height) n.vy *= -1
       })
+
       for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
           const dx = nodes[i].x - nodes[j].x
@@ -54,18 +123,45 @@ export default function Hero() {
           }
         }
       }
+
       nodes.forEach(n => {
         ctx.beginPath()
         ctx.arc(n.x, n.y, 2, 0, Math.PI * 2)
         ctx.fillStyle = 'rgba(0,180,216,0.4)'
         ctx.fill()
       })
+
+      // Draw code text in three random columns
+      columns.forEach(column => {
+        const baseY = column.y - (column.lines.length * lineHeight) / 2
+
+        column.lines.forEach((codeText, idx) => {
+          const elapsed = Date.now() - codeText.startTime
+          const charDelay = 40
+          const targetCharIndex = Math.floor(elapsed / charDelay)
+          const displayText = codeText.text.substring(0, targetCharIndex)
+
+          const y = baseY + idx * lineHeight
+
+          ctx.font = `${fontSize}px ${fontFamily}`
+          ctx.textAlign = 'center'
+          ctx.fillStyle = `rgba(0,180,216,${Math.max(0, 1 - elapsed / 10000)})`
+          ctx.fillText(displayText, column.x, y)
+
+          // Remove if fully typed and faded
+          if (elapsed > 10000) {
+            column.lines.splice(idx, 1)
+          }
+        })
+      })
+
       raf = requestAnimationFrame(draw)
     }
     draw()
 
     return () => {
       window.removeEventListener('resize', resize)
+      clearInterval(codeCreationTimer)
       cancelAnimationFrame(raf)
     }
   }, [])
