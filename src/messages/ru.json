@@ -13,7 +13,7 @@
     "requestDemo": "Загрузить бесплатно"
   },
   "hero": {
-    "badge": "Profliga SRL",
+    "badge": "Freeng Ltd",
     "headline1": "Управляй Asterisk",
     "headline2": "без боли.",
     "headline3": "Один портал —",
@@ -705,14 +705,14 @@
     "ctaSecondary": "Документация",
     "trust": [
       { "icon": "🔒", "label": "JWT + bcrypt" },
-      { "icon": "🏢", "label": "Profliga SRL" },
+      { "icon": "🏢", "label": "Freeng Ltd" },
       { "icon": "⚡", "label": "WebSocket Real-time" },
       { "icon": "🛡️", "label": "RBAC + Firewall" }
     ]
   },
   "footer": {
     "description": "Профессиональная веб-платформа для администрирования Asterisk PBX.",
-    "version": "by Profliga SRL · v3.1",
+    "version": "by Freeng Ltd · v3.1",
     "navigation": "Навигация",
     "resources": "Ресурсы",
     "resourceDocs": "Документация",
@@ -720,7 +720,7 @@
     "resourceSupport": "Поддержка",
     "resourcePrivacy": "Политика конфиденциальности",
     "contact": "Связаться",
-    "copyright": "Profliga SRL. Все права защищены.",
+    "copyright": "Freeng Ltd. Все права защищены.",
     "systemOnline": "System online"
   }
 }

@@ -13,7 +13,7 @@
     "requestDemo": "Download for Free"
   },
   "hero": {
-    "badge": "Profliga SRL · version 3.1",
+    "badge": "Freeng Ltd · version 3.1",
     "headline1": "Manage Asterisk",
     "headline2": "without the pain.",
     "headline3": "One portal —",
@@ -705,14 +705,14 @@
     "ctaSecondary": "Documentation",
     "trust": [
       { "icon": "🔒", "label": "JWT + bcrypt" },
-      { "icon": "🏢", "label": "Profliga SRL" },
+      { "icon": "🏢", "label": "Freeng Ltd" },
       { "icon": "⚡", "label": "WebSocket Real-time" },
       { "icon": "🛡️", "label": "RBAC + Firewall" }
     ]
   },
   "footer": {
     "description": "Professional web platform for Asterisk PBX administration.",
-    "version": "by Profliga SRL · v3.1",
+    "version": "by Freeng Ltd · v3.1",
     "navigation": "Navigation",
     "resources": "Resources",
     "resourceDocs": "Documentation",
@@ -720,7 +720,7 @@
     "resourceSupport": "Support",
     "resourcePrivacy": "Privacy Policy",
     "contact": "Contact",
-    "copyright": "Profliga SRL. All rights reserved.",
+    "copyright": "Freeng Ltd. All rights reserved.",
     "systemOnline": "System online"
   }
 }
