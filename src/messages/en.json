@@ -689,6 +689,13 @@
       }
     ]
   },
+  "orchestraConductor": {
+    "sectionLabel": "Orchestration",
+    "headline1": "Manage your IP-PBX network",
+    "headline2": "like a symphony orchestra",
+    "description": "Every station, trunk, and call flow is an instrument waiting to be conducted. With Asteraid, you're the maestro — orchestrating your entire telephony infrastructure in perfect harmony. Real-time visibility, synchronized control, and harmonic efficiency across your entire network.",
+    "ctaPrimary": "Download for Free"
+  },
   "cta": {
     "sectionLabel": "Get started today",
     "headline1": "Ready to bring order",

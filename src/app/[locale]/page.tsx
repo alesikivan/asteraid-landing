@@ -11,6 +11,7 @@ import Benefits from '@/components/sections/Benefits'
 import BeforeAfter from '@/components/sections/BeforeAfter'
 import SystemRequirements from '@/components/sections/SystemRequirements'
 import FAQ from '@/components/sections/FAQ'
+import OrchestraConductor from '@/components/sections/OrchestraConductor'
 import CTA from '@/components/sections/CTA'
 
 type Props = {
@@ -27,6 +28,7 @@ export default async function HomePage({ params }: Props) {
       <Concepts />
       <Stats />
       <SystemRequirements />
+      <OrchestraConductor />
       <Features />
       <Screenshots />
       <RoleDashboards />
