@@ -7,6 +7,7 @@ import Screenshots from '@/components/sections/Screenshots'
 import RoleDashboards from '@/components/sections/RoleDashboards'
 import HowItWorks from '@/components/sections/HowItWorks'
 import Benefits from '@/components/sections/Benefits'
+import WhyAsteraid from '@/components/sections/WhyAsteraid'
 // import TechStack from '@/components/sections/TechStack'
 import BeforeAfter from '@/components/sections/BeforeAfter'
 import SystemRequirements from '@/components/sections/SystemRequirements'
@@ -26,6 +27,7 @@ export default async function HomePage({ params }: Props) {
     <>
       <Hero />
       <Concepts />
+      <WhyAsteraid />
       <Stats />
       <SystemRequirements />
       <OrchestraConductor />

@@ -652,6 +652,52 @@
       }
     ]
   },
+  "whyAsteraid": {
+    "sectionLabel": "Why Asteraid",
+    "headline1": "Thoughtfully designed",
+    "headline2": "product.",
+    "subheadline": "We didn't copy other systems. Every feature in Asteraid is built from the real pain of IT admins and real-world use cases.",
+    "items": [
+      {
+        "title": "Fast recovery after failures",
+        "description": "Automatic configuration backups and built-in recovery tools minimize downtime — even after complete node failure.",
+        "icon": "recovery"
+      },
+      {
+        "title": "Modern and intuitive interface",
+        "description": "React-based interface works in any modern browser without plugins. Fully responsive for desktop and tablet.",
+        "icon": "ui"
+      },
+      {
+        "title": "Updates without telephony downtime",
+        "description": "Zero-downtime updates: new versions deploy without restarting Asterisk. Active calls never drop for a second.",
+        "icon": "update"
+      },
+      {
+        "title": "Peer-to-peer Asterisk clustering",
+        "description": "P2P cluster with no single point of failure: every node is equal and autonomous. More reliable than traditional HA stacks.",
+        "icon": "cluster"
+      },
+      {
+        "title": "Low cost of ownership",
+        "description": "Runs on any Linux server. No specialized hardware platforms or expensive third-party enterprise licenses required.",
+        "icon": "cost"
+      },
+      {
+        "title": "Works on any OS",
+        "description": "Docker containers provide full portability — Ubuntu, Debian, CentOS, or any cloud without config changes.",
+        "icon": "container"
+      }
+    ],
+    "freeBlock": {
+      "badge": "FREE FOREVER",
+      "title": "Our fundamental difference",
+      "price": "0",
+      "currency": "$",
+      "description": "Single-server Asteraid is free. Just download and use. Forever!",
+      "note": "No hidden fees. No licenses. Just download and install."
+    }
+  },
   "faq": {
     "sectionLabel": "FAQ",
     "headline": "Frequently Asked Questions",
