@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 
 export default function OrchestraConductor() {
@@ -171,9 +172,11 @@ export default function OrchestraConductor() {
             }}
           />
 
-          <img
+          <Image
             src="/system_ptohos/orchestraConductor.png"
             alt="Conductor"
+            width={600}
+            height={500}
             style={{
               position: 'relative',
               zIndex: 1,
