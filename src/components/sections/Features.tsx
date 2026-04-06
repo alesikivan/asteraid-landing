@@ -66,8 +66,8 @@ export default function Features() {
                 transition: 'all 0.3s ease',
                 boxShadow: active.has(feature.id) ? '0 0 30px rgba(0,180,216,0.1)' : 'none',
               }}
-              onMouseEnter={e => { if (active !== feature.id) e.currentTarget.style.borderColor = 'rgba(0,180,216,0.2)' }}
-              onMouseLeave={e => { if (active !== feature.id) e.currentTarget.style.borderColor = 'var(--border)' }}
+              onMouseEnter={e => { if (!active.has(feature.id)) e.currentTarget.style.borderColor = 'rgba(0,180,216,0.2)' }}
+              onMouseLeave={e => { if (!active.has(feature.id)) e.currentTarget.style.borderColor = 'var(--border)' }}
             >
               <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '12px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
