@@ -334,12 +334,32 @@ export default function Concepts() {
 
         {/* ── Bottom Connections with upward arrows to PBX boxes ── */}
         <div className="cpts-conn-section">
-          {/*
-            SVG spans only the GAP between PBX grid bottom and pills top.
-            y=0  → arrowheads (just below PBX boxes)
-            y=70 → where lines touch the pill tops (pills are in normal flow BELOW this SVG)
-            PBX centers: left x=150, center x=450, right x=750
-          */}
+          {/* SVG: orthogonal connectors PBX → pills
+              viewBox 900×155 matches section (padding-top 75 + pill×2 + gap ≈ 155px)
+              PBX centers: left x=150, center x=450, right x=750
+              Green  (Media RTP)    : 450,0 → vertical down to pill center y≈88
+              Purple (SIP Signaling): 150,0 / 750,0 → vertical to pill y≈137 → horizontal to 450  */}
+          <svg className="cpts-conn-svg" viewBox="0 0 900 155" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {/* Static background paths */}
+            <line x1="450" y1="0" x2="450" y2="88"  stroke="rgba(76,175,80,0.25)"   strokeWidth="1.5"/>
+            <path d="M150,0 L150,137 L450,137"       stroke="rgba(156,111,228,0.22)" strokeWidth="1.5" fill="none"/>
+            <path d="M750,0 L750,137 L450,137"       stroke="rgba(156,111,228,0.22)" strokeWidth="1.5" fill="none"/>
+            {/* Animated particle — green */}
+            <line x1="450" y1="0" x2="450" y2="88"
+              stroke="rgba(76,175,80,0.85)" strokeWidth="2.5" strokeLinecap="round"
+              strokeDasharray="10 90" pathLength="100"
+              style={{ animation: 'fp-flow 1.8s linear infinite 0s' }}/>
+            {/* Animated particles — purple left */}
+            <path d="M150,0 L150,137 L450,137"
+              stroke="rgba(156,111,228,0.85)" strokeWidth="2.5" strokeLinecap="round"
+              strokeDasharray="10 90" pathLength="100" fill="none"
+              style={{ animation: 'fp-flow 2s linear infinite 0.3s' }}/>
+            {/* Animated particles — purple right */}
+            <path d="M750,0 L750,137 L450,137"
+              stroke="rgba(156,111,228,0.85)" strokeWidth="2.5" strokeLinecap="round"
+              strokeDasharray="10 90" pathLength="100" fill="none"
+              style={{ animation: 'fp-flow 2s linear infinite 0.7s' }}/>
+          </svg>
           {/* Pills — normal flow BELOW the SVG, no overlap */}
           <div className="cpts-pills-wrap">
             <div className="cpts-conn-pill cpts-conn-pill--green">
@@ -360,6 +380,91 @@ export default function Concepts() {
             </div>
           </div>
         </div>
+
+        {/* ── Periphery connector (pills → periphery) ── */}
+        <div className="cpts-periph-connector">
+          <div className="cpts-periph-conn-line" />
+        </div>
+
+        {/* ── Periphery (Asterisk PBX ecosystem, muted) ── */}
+        <div className="cpts-periph-wrap">
+          <svg className="cpts-periph-fanout" viewBox="0 0 900 44" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="450" y1="0" x2="75"  y2="44" stroke="rgba(0,180,216,0.4)" strokeWidth="1"/>
+            <line x1="450" y1="0" x2="225" y2="44" stroke="rgba(0,180,216,0.4)" strokeWidth="1"/>
+            <line x1="450" y1="0" x2="375" y2="44" stroke="rgba(0,180,216,0.4)" strokeWidth="1"/>
+            <line x1="450" y1="0" x2="525" y2="44" stroke="rgba(0,180,216,0.4)" strokeWidth="1"/>
+            <line x1="450" y1="0" x2="675" y2="44" stroke="rgba(0,180,216,0.4)" strokeWidth="1"/>
+            <line x1="450" y1="0" x2="825" y2="44" stroke="rgba(0,180,216,0.4)" strokeWidth="1"/>
+          </svg>
+          <div className="cpts-periph-grid">
+
+            {/* SIP Providers */}
+            <div className="cpts-periph-item cpts-periph-item--phones">
+              <svg width="32" height="22" viewBox="0 0 32 22" fill="none">
+                <path d="M23 6c0-3-2.5-5.5-6-5.5a6.4 6.4 0 0 0-5.9 4C8.1 5.1 5 7.7 5 11a6 6 0 0 0 5.5 6H23a4 4 0 0 0 0-8z" stroke="rgba(0,180,216,0.85)" strokeWidth="1.4" fill="rgba(0,180,216,0.12)"/>
+              </svg>
+              <span>SIP Providers</span>
+            </div>
+
+            {/* VOIP Gateways */}
+            <div className="cpts-periph-item cpts-periph-item--phones">
+              <svg width="32" height="22" viewBox="0 0 32 22" fill="none">
+                <rect x="2" y="5" width="28" height="12" rx="3" stroke="rgba(0,180,216,0.85)" strokeWidth="1.4" fill="rgba(0,180,216,0.12)"/>
+                <circle cx="8"  cy="11" r="1.8" fill="rgba(0,180,216,0.9)"/>
+                <line x1="13" y1="11" x2="26" y2="11" stroke="rgba(0,180,216,0.6)" strokeWidth="1" strokeDasharray="2 2"/>
+              </svg>
+              <span>VOIP Gateways</span>
+            </div>
+
+            {/* PSTN */}
+            <div className="cpts-periph-item cpts-periph-item--phones">
+              <svg width="32" height="22" viewBox="0 0 32 22" fill="none">
+                <ellipse cx="16" cy="11" rx="14" ry="9" stroke="rgba(0,180,216,0.85)" strokeWidth="1.4" fill="rgba(0,180,216,0.12)"/>
+                <ellipse cx="16" cy="11" rx="6"  ry="9" stroke="rgba(0,180,216,0.5)"  strokeWidth="1" fill="none"/>
+                <line x1="2" y1="11" x2="30" y2="11" stroke="rgba(0,180,216,0.5)" strokeWidth="1"/>
+              </svg>
+              <span>PSTN</span>
+            </div>
+
+            {/* Analog Phones */}
+            <div className="cpts-periph-item cpts-periph-item--phones">
+              <div className="cpts-periph-phones">
+                {([0,1,2] as number[]).map(i => (
+                  <svg key={i} width="15" height="18" viewBox="0 0 15 18" fill="none">
+                    <polygon points="7.5,1 14,16 1,16" stroke="rgba(0,180,216,0.85)" strokeWidth="1.4" strokeLinejoin="round" fill="rgba(0,180,216,0.12)"/>
+                  </svg>
+                ))}
+              </div>
+              <span>Analog Phones</span>
+            </div>
+
+            {/* Other PBXs */}
+            <div className="cpts-periph-item cpts-periph-item--phones">
+              <svg width="32" height="22" viewBox="0 0 32 22" fill="none">
+                <rect x="2" y="2"  width="28" height="8" rx="2" stroke="rgba(0,180,216,0.85)" strokeWidth="1.4" fill="rgba(0,180,216,0.12)"/>
+                <rect x="2" y="12" width="28" height="8" rx="2" stroke="rgba(0,180,216,0.85)" strokeWidth="1.4" fill="rgba(0,180,216,0.12)"/>
+                <circle cx="26" cy="6"  r="1.5" fill="rgba(0,180,216,0.9)"/>
+                <circle cx="26" cy="16" r="1.5" fill="rgba(0,180,216,0.9)"/>
+              </svg>
+              <span>Other PBXs</span>
+            </div>
+
+            {/* SIP Phones */}
+            <div className="cpts-periph-item cpts-periph-item--phones">
+              <div className="cpts-periph-phones">
+                {([0,1,2,3] as number[]).map(i => (
+                  <svg key={i} width="11" height="18" viewBox="0 0 11 18" fill="none">
+                    <rect x="1" y="1" width="9" height="16" rx="2" stroke="rgba(0,180,216,0.85)" strokeWidth="1.4" fill="rgba(0,180,216,0.12)"/>
+                    <rect x="3" y="3" width="5" height="7" rx="1" fill="rgba(0,180,216,0.18)"/>
+                    <circle cx="5.5" cy="14" r="1" fill="rgba(0,180,216,0.9)"/>
+                  </svg>
+                ))}
+              </div>
+              <span>SIP Phones</span>
+            </div>
+
+          </div>{/* /periph-grid */}
+        </div>{/* /periph-wrap */}
 
       </div>{/* /container */}
 
@@ -732,7 +837,7 @@ export default function Concepts() {
           grid-template-columns: repeat(3, 1fr);
           gap: 16px;
           width: 100%;
-          margin-bottom: 20px;
+          margin-bottom: 8px;
         }
         .cpts-pbx-card {
           border-radius: 16px;
@@ -804,18 +909,24 @@ export default function Concepts() {
           width: 100%;
         }
         .cpts-conn-svg {
-          width: 100%;
-          height: 130px;
+          position: absolute;
+          top: 0; left: 0;
+          width: 100%; height: 100%;
           display: block;
+          pointer-events: none;
+          overflow: visible;
         }
         .cpts-pills-wrap {
+          position: relative;
+          z-index: 1;
           display: flex;
           flex-direction: column;
           align-items: center;
           gap: 10px;
           width: 100%;
           max-width: 420px;
-          margin: 24px auto 0;
+          margin: 0 auto;
+          padding-top: 75px;
           pointer-events: none;
         }
         .cpts-pills-wrap > * { pointer-events: auto; }
@@ -830,7 +941,8 @@ export default function Concepts() {
           justify-content: center;
         }
         .cpts-conn-pill--green {
-          background: rgba(76,175,80,0.08);
+          background: var(--bg-base, #0d1117);
+          background: linear-gradient(rgba(76,175,80,0.10), rgba(76,175,80,0.10)), var(--bg-base, #0d1117);
           border: 1.5px solid rgba(76,175,80,0.35);
           box-shadow: 0 0 16px rgba(76,175,80,0.08);
         }
@@ -841,7 +953,8 @@ export default function Concepts() {
           letter-spacing: 0.05em;
         }
         .cpts-conn-pill--purple {
-          background: rgba(156,111,228,0.08);
+          background: var(--bg-base, #0d1117);
+          background: linear-gradient(rgba(156,111,228,0.08), rgba(156,111,228,0.08)), var(--bg-base, #0d1117);
           border: 1.5px solid rgba(156,111,228,0.35);
           box-shadow: 0 0 16px rgba(156,111,228,0.08);
         }
@@ -874,6 +987,67 @@ export default function Concepts() {
           }
           .cpts-pbx-grid { grid-template-columns: 1fr !important; }
           .cpts-fanout-svg { height: 100px; }
+          .cpts-periph-grid { grid-template-columns: repeat(3, 1fr) !important; }
+          .cpts-periph-fanout { display: none !important; }
+        }
+
+        /* ── Periphery connector ── */
+        .cpts-periph-connector {
+          display: flex; justify-content: center;
+          height: 8px;
+        }
+        .cpts-periph-conn-line {
+          width: 1.5px; height: 100%;
+          background: rgba(0,180,216,0.12);
+        }
+
+        /* ── Periphery wrap ── */
+        .cpts-periph-wrap {
+          opacity: 1;
+          transition: opacity 0.35s ease;
+        }
+        .cpts-periph-wrap:hover { opacity: 1; }
+        .cpts-periph-fanout { width: 100%; height: 44px; display: block; }
+
+        /* ── Periphery grid ── */
+        .cpts-periph-grid {
+          display: grid;
+          grid-template-columns: repeat(6, 1fr);
+          gap: 8px;
+        }
+        .cpts-periph-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 6px;
+          padding: 10px 6px 8px;
+          text-align: center;
+        }
+        .cpts-periph-item--oval {
+          border: 1px solid rgba(0,180,216,0.55);
+          background: rgba(0,180,216,0.07);
+          border-radius: 50px;
+        }
+        .cpts-periph-item--rect {
+          border: 1px solid rgba(0,180,216,0.55);
+          background: rgba(0,180,216,0.07);
+          border-radius: 8px;
+        }
+        .cpts-periph-item--phones {
+          border: none;
+          background: transparent;
+        }
+        .cpts-periph-item span {
+          font-family: var(--font-mono);
+          font-size: 9.5px;
+          color: var(--text-secondary);
+          letter-spacing: 0.04em;
+          white-space: nowrap;
+        }
+        .cpts-periph-phones {
+          display: flex;
+          align-items: flex-end;
+          gap: 2px;
         }
       `}</style>
     </section>
