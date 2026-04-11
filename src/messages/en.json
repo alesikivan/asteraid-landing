@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Asteraid — Professional Asterisk PBX Management",
-    "description": "Web platform for Asterisk administration: real-time station monitoring, visual dialplan editor, CDR, SSH terminal and Active Directory."
+    "description": "Web platform for Asterisk administration: real-time PBX monitoring, visual dialplan editor, CDR, SSH terminal and Active Directory."
   },
   "nav": {
     "features": "Features",
@@ -18,26 +18,26 @@
     "headline1": "Manage Asterisk",
     "headline2": "without the pain.",
     "headline3": "One portal —",
-    "headline4": "all stations.",
+    "headline4": "all PBX's.",
     "subheadline": "Professional web platform for Asterisk PBX administration: real-time monitoring, visual dialplan editor, call history and SSH terminal right in the browser 2.",
     "ctaPrimary": "Download for Free",
     "ctaSecondary": "All Features",
     "dashboardUrl": "asteraid.corp.local/dashboard",
     "dashboardTitle": "ADMIN DASHBOARD",
     "live": "LIVE",
-    "stations": "Stations",
+    "stations": "PBX's",
     "extensions": "Extensions",
     "trunks": "Trunks",
     "trunksValue": "8/8",
     "trunksStatus": "all up",
-    "ramUsage": "RAM Usage · Station-1",
+    "ramUsage": "RAM Usage · PBX-1",
     "online": "online",
     "maintenance": "maintenance"
   },
   "concepts": {
     "sectionLabel": "Key Concepts",
     "headline": "How Asteraid works",
-    "subheadline": "The platform runs as two Docker containers: the Configuration Server builds and delivers settings to stations over SSH, while MongoDB provides reliable storage for all configurations. The result — a single control point for your entire Asterisk infrastructure.",
+    "subheadline": "The platform runs as two Docker containers: the Configuration Server builds and delivers settings to PBX's over SSH, while MongoDB provides reliable storage for all configurations. The result — a single control point for your entire Asterisk infrastructure.",
     "vmLabel": "Virtual Machine",
     "dockerContainersLabel": "Docker Containers",
     "webInterfaceLabel": "Web Interface",
@@ -60,7 +60,7 @@
     "sectionLabel": "Platform by the numbers",
     "headline": "Everything you need to manage PBX",
     "items": [
-      { "value": "N+", "label": "Asterisk stations from one window", "icon": "server" },
+      { "value": "N+", "label": "Asterisk PBX's from one window", "icon": "server" },
       { "value": "4", "label": "Role-based access levels", "icon": "shield" },
       { "value": "20+", "label": "Management modules", "icon": "layout" },
       { "value": "AD", "label": "Active Directory support", "icon": "users" },
@@ -93,7 +93,7 @@
         "title": "Disaster Recovery Readiness",
         "description": "Everything needed to restore the full configuration of the network of PBXs is stored in a single archive. All you need is a valid backup, the decryption key, and a new infrastructure to start. From new hardware to a fully operational service in just a few minutes.",
         "items": [
-          "Entire PBX network config in one encrypted archive — stations, trunks, dialplans, users, certificates",
+          "Entire PBX network config in one encrypted archive — PBX's, trunks, dialplans, users, certificates",
           "Restore requires only the backup file and decryption key — no manual reconfiguration",
           "New hardware → fully operational telephony in minutes, not days",
           "AES-encrypted backup with centralized key management",
@@ -128,7 +128,7 @@
         "id": "realtime",
         "tag": "Real-time Dashboard",
         "title": "Real-time Monitoring",
-        "description": "Via WebSocket the platform continuously receives and displays live metrics from all connected Asterisk stations.",
+        "description": "Via WebSocket the platform continuously receives and displays live metrics from all connected Asterisk PBX's.",
         "items": [
           "Memory load (RAM)",
           "Trunk status: online / offline / disabled",
@@ -141,14 +141,14 @@
       {
         "id": "multistation",
         "tag": "Multi-Server Management",
-        "title": "Multi-Station Management",
+        "title": "Multi-PBX Management",
         "description": "Asteraid lets you add any number of Asterisk servers and manage them centrally.",
         "items": [
           "Add by hostname / IP",
           "SSH connection (password or key)",
           "Timezone and tone code setup",
           "Maintenance Mode without deletion",
-          "Station operation log",
+          "PBX operation log",
           "Copy SSH key from UI"
         ]
       },
@@ -225,7 +225,7 @@
         "title": "SSH Web Terminal",
         "description": "Full-featured SSH terminal right in the browser powered by xterm.js.",
         "items": [
-          "Connect to any added station",
+          "Connect to any added PBX",
           "xterm.js — performant terminal",
           "Clipboard support (ClipboardAddon)",
           "Auto-resize (FitAddon)",
@@ -237,7 +237,7 @@
         "id": "firewall",
         "tag": "Network Security",
         "title": "Firewall Management",
-        "description": "Built-in firewall at station level with ipset support.",
+        "description": "Built-in firewall at PBX level with ipset support.",
         "items": [
           "Allow / deny rules by IP / CIDR",
           "ipset support",
@@ -297,9 +297,9 @@
         "description": "Full access to all platform sections",
         "badge": "Full Access",
         "features": [
-          "Summary widgets for all stations",
+          "Summary widgets for all PBX's",
           "RAM, trunk and extension monitoring",
-          "Station list with live status",
+          "PBX list with live status",
           "Performance metrics",
           "User and role management",
           "System settings"
@@ -347,7 +347,7 @@
     ],
     "matrix": [
       { "module": "Dashboard", "admin": true, "supervisor": true, "user": true, "security": true },
-      { "module": "Stations / Servers", "admin": true, "supervisor": false, "user": false, "security": false },
+      { "module": "PBX's / Servers", "admin": true, "supervisor": false, "user": false, "security": false },
       { "module": "Users", "admin": true, "supervisor": false, "user": false, "security": false },
       { "module": "CDR / Calls", "admin": true, "supervisor": true, "user": true, "security": false },
       { "module": "Dialplans", "admin": true, "supervisor": false, "user": false, "security": false },
@@ -371,7 +371,7 @@
       },
       {
         "step": "02",
-        "title": "Connect Stations",
+        "title": "Connect PBX's",
         "description": "Add your Asterisk servers by hostname. Asteraid connects via SSH and starts monitoring automatically."
       },
       {
@@ -429,7 +429,7 @@
       },
       {
         "title": "Scalability",
-        "description": "Works with one station and a cluster. Adding new servers takes a couple of clicks.",
+        "description": "Works with one PBX and a cluster. Adding new servers takes a couple of clicks.",
         "icon": "layers"
       }
     ]
@@ -448,7 +448,7 @@
         "task": "Server access",
         "icon": "🖥️",
         "before": "SSH into each server separately, juggling different IPs and credentials",
-        "after": "All Asterisk servers in one web interface — switch stations in one click"
+        "after": "All Asterisk servers in one web interface — switch PBX's in one click"
       },
       {
         "task": "Config editing",
@@ -707,7 +707,7 @@
       {
         "id": "multi",
         "question": "Does Asteraid work with multiple Asterisk servers?",
-        "answer": "Yes, Asteraid is designed for multi-station management. You add any number of servers and manage them centrally from one interface."
+        "answer": "Yes, Asteraid is designed for multi-PBX management. You add any number of servers and manage them centrally from one interface."
       },
       {
         "id": "expertise",
@@ -740,7 +740,7 @@
     "sectionLabel": "Orchestration",
     "headline1": "Manage your IP-PBX network",
     "headline2": "like a symphony orchestra",
-    "description": "Every station, trunk, and call flow is an instrument waiting to be conducted. With Asteraid, you're the maestro — orchestrating your entire telephony infrastructure in perfect harmony. Real-time visibility, synchronized control, and harmonic efficiency across your entire network.",
+    "description": "Every PBX, trunk, and call flow is an instrument waiting to be conducted. With Asteraid, you're the maestro — orchestrating your entire telephony infrastructure in perfect harmony. Real-time visibility, synchronized control, and harmonic efficiency across your entire network.",
     "ctaPrimary": "Download for Free"
   },
   "cta": {

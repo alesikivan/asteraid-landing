@@ -183,7 +183,7 @@ export default function Hero() {
     }
   }, [])
 
-  const BADGES = ['Asterisk', 'Active Directory', 'Multi-Station', 'Real-time', 'WebSocket', 'SSH Terminal']
+  const BADGES = ['Asterisk', 'Active Directory', 'Multi-PBX', 'Real-time', 'WebSocket', 'SSH Terminal']
 
   return (
     <section className="hero-section" style={{
