@@ -174,7 +174,7 @@ export default function Hero() {
       display: 'flex', alignItems: 'center',
       overflow: 'hidden', paddingTop: '80px',
     }}>
-      <canvas ref={canvasRef} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' }} />
+      <canvas ref={canvasRef} className="hero-canvas" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' }} />
       <div className="bg-grid" style={{ position: 'absolute', inset: 0, opacity: 0.5, pointerEvents: 'none' }} />
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 70% 60% at 50% 30%, rgba(0,180,216,0.08) 0%, transparent 70%)', pointerEvents: 'none' }} />
 
@@ -243,6 +243,9 @@ export default function Hero() {
           .hero-right { display: none; }
           .hero-section { min-height: unset !important; align-items: flex-start !important; }
           .hero-inner { padding-top: 25px !important; padding-bottom: 40px !important; }
+        }
+        @media (max-width: 767px) {
+          .hero-canvas { display: none; }
         }
       `}</style>
     </section>
