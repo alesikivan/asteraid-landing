@@ -1001,7 +1001,12 @@ export default function Concepts() {
           .cpts-pbx-grid { grid-template-columns: 1fr !important; }
           .cpts-fanout-svg { height: 100px; }
           .cpts-periph-grid { grid-template-columns: repeat(2, 1fr) !important; }
-          .cpts-periph-voip-sub { flex-direction: column; align-items: center; }
+          .cpts-periph-fanout { display: none !important; }
+          .cpts-periph-grid > *:nth-child(2) { order: 3; grid-column: 1 / -1; }
+          .cpts-periph-grid > *:nth-child(3) { order: 2; }
+          .cpts-periph-grid > *:nth-child(4) { order: 4; grid-column: 1 / -1; }
+          .cpts-periph-voip-sub { padding-left: 0 !important; gap: 24px !important; justify-content: center !important; }
+          .cpts-periph-voip-tcon { width: 50% !important; }
           .cpts-periph-fanout { display: none !important; }
         }
 
