@@ -388,13 +388,12 @@ export default function Concepts() {
 
         {/* ── Periphery (Asterisk PBX ecosystem, muted) ── */}
         <div className="cpts-periph-wrap">
+          {/* Fan-out: 4 lines to 4 top-level items */}
           <svg className="cpts-periph-fanout" viewBox="0 0 900 44" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line x1="450" y1="0" x2="75"  y2="44" stroke="rgba(0,180,216,0.4)" strokeWidth="1"/>
-            <line x1="450" y1="0" x2="225" y2="44" stroke="rgba(0,180,216,0.4)" strokeWidth="1"/>
-            <line x1="450" y1="0" x2="375" y2="44" stroke="rgba(0,180,216,0.4)" strokeWidth="1"/>
-            <line x1="450" y1="0" x2="525" y2="44" stroke="rgba(0,180,216,0.4)" strokeWidth="1"/>
-            <line x1="450" y1="0" x2="675" y2="44" stroke="rgba(0,180,216,0.4)" strokeWidth="1"/>
-            <line x1="450" y1="0" x2="825" y2="44" stroke="rgba(0,180,216,0.4)" strokeWidth="1"/>
+            <line x1="450" y1="0" x2="112" y2="44" stroke="rgba(0,180,216,0.4)" strokeWidth="1"/>
+            <line x1="450" y1="0" x2="337" y2="44" stroke="rgba(0,180,216,0.4)" strokeWidth="1"/>
+            <line x1="450" y1="0" x2="562" y2="44" stroke="rgba(0,180,216,0.4)" strokeWidth="1"/>
+            <line x1="450" y1="0" x2="787" y2="44" stroke="rgba(0,180,216,0.4)" strokeWidth="1"/>
           </svg>
           <div className="cpts-periph-grid">
 
@@ -406,36 +405,50 @@ export default function Concepts() {
               <span>SIP Providers</span>
             </div>
 
-            {/* VOIP Gateways */}
-            <div className="cpts-periph-item cpts-periph-item--phones">
-              <svg width="32" height="22" viewBox="0 0 32 22" fill="none">
-                <rect x="2" y="5" width="28" height="12" rx="3" stroke="rgba(0,180,216,0.85)" strokeWidth="1.4" fill="rgba(0,180,216,0.12)"/>
-                <circle cx="8"  cy="11" r="1.8" fill="rgba(0,180,216,0.9)"/>
-                <line x1="13" y1="11" x2="26" y2="11" stroke="rgba(0,180,216,0.6)" strokeWidth="1" strokeDasharray="2 2"/>
-              </svg>
-              <span>VOIP Gateways</span>
-            </div>
-
-            {/* PSTN */}
-            <div className="cpts-periph-item cpts-periph-item--phones">
-              <svg width="32" height="22" viewBox="0 0 32 22" fill="none">
-                <ellipse cx="16" cy="11" rx="14" ry="9" stroke="rgba(0,180,216,0.85)" strokeWidth="1.4" fill="rgba(0,180,216,0.12)"/>
-                <ellipse cx="16" cy="11" rx="6"  ry="9" stroke="rgba(0,180,216,0.5)"  strokeWidth="1" fill="none"/>
-                <line x1="2" y1="11" x2="30" y2="11" stroke="rgba(0,180,216,0.5)" strokeWidth="1"/>
-              </svg>
-              <span>PSTN</span>
-            </div>
-
-            {/* Analog Phones */}
-            <div className="cpts-periph-item cpts-periph-item--phones">
-              <div className="cpts-periph-phones">
-                {([0,1,2] as number[]).map(i => (
-                  <svg key={i} width="15" height="18" viewBox="0 0 15 18" fill="none">
-                    <polygon points="7.5,1 14,16 1,16" stroke="rgba(0,180,216,0.85)" strokeWidth="1.4" strokeLinejoin="round" fill="rgba(0,180,216,0.12)"/>
-                  </svg>
-                ))}
+            {/* VOIP Gateways + sub-items (PSTN, Analog Phones) */}
+            <div className="cpts-periph-voip-col">
+              <div className="cpts-periph-item cpts-periph-item--phones">
+                <svg width="32" height="22" viewBox="0 0 32 22" fill="none">
+                  <rect x="2" y="5" width="28" height="12" rx="3" stroke="rgba(0,180,216,0.85)" strokeWidth="1.4" fill="rgba(0,180,216,0.12)"/>
+                  <circle cx="8"  cy="11" r="1.8" fill="rgba(0,180,216,0.9)"/>
+                  <line x1="13" y1="11" x2="26" y2="11" stroke="rgba(0,180,216,0.6)" strokeWidth="1" strokeDasharray="2 2"/>
+                </svg>
+                <span>VOIP Gateways</span>
               </div>
-              <span>Analog Phones</span>
+
+              {/* T-shaped connector */}
+              <svg className="cpts-periph-voip-tcon" viewBox="0 0 140 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="70" y1="0"  x2="70"  y2="18" stroke="rgba(0,180,216,0.35)" strokeWidth="1.5"/>
+                <line x1="25" y1="18" x2="115" y2="18" stroke="rgba(0,180,216,0.35)" strokeWidth="1.5"/>
+                <line x1="25" y1="18" x2="25"  y2="36" stroke="rgba(0,180,216,0.35)" strokeWidth="1.5"/>
+                <line x1="115" y1="18" x2="115" y2="36" stroke="rgba(0,180,216,0.35)" strokeWidth="1.5"/>
+              </svg>
+
+              {/* Sub-items */}
+              <div className="cpts-periph-voip-sub">
+                {/* PSTN */}
+                <div className="cpts-periph-item cpts-periph-item--phones">
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                    <circle cx="14" cy="14" r="12" stroke="rgba(0,180,216,0.85)" strokeWidth="1.4" fill="rgba(0,180,216,0.12)"/>
+                    <ellipse cx="14" cy="14" rx="5.5" ry="12" stroke="rgba(0,180,216,0.5)" strokeWidth="1" fill="none"/>
+                    <line x1="2" y1="14" x2="26" y2="14" stroke="rgba(0,180,216,0.5)" strokeWidth="1"/>
+                    <line x1="3" y1="8"  x2="25" y2="8"  stroke="rgba(0,180,216,0.3)" strokeWidth="0.8"/>
+                    <line x1="3" y1="20" x2="25" y2="20" stroke="rgba(0,180,216,0.3)" strokeWidth="0.8"/>
+                  </svg>
+                  <span>PSTN</span>
+                </div>
+                {/* Analog Phones */}
+                <div className="cpts-periph-item cpts-periph-item--phones">
+                  <div className="cpts-periph-phones">
+                    {([0,1] as number[]).map(i => (
+                      <svg key={i} width="15" height="18" viewBox="0 0 15 18" fill="none">
+                        <polygon points="7.5,1 14,16 1,16" stroke="rgba(0,180,216,0.85)" strokeWidth="1.4" strokeLinejoin="round" fill="rgba(0,180,216,0.12)"/>
+                      </svg>
+                    ))}
+                  </div>
+                  <span>Analog Phones</span>
+                </div>
+              </div>
             </div>
 
             {/* Other PBXs */}
@@ -987,7 +1000,8 @@ export default function Concepts() {
           }
           .cpts-pbx-grid { grid-template-columns: 1fr !important; }
           .cpts-fanout-svg { height: 100px; }
-          .cpts-periph-grid { grid-template-columns: repeat(3, 1fr) !important; }
+          .cpts-periph-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .cpts-periph-voip-sub { flex-direction: column; align-items: center; }
           .cpts-periph-fanout { display: none !important; }
         }
 
@@ -1012,8 +1026,9 @@ export default function Concepts() {
         /* ── Periphery grid ── */
         .cpts-periph-grid {
           display: grid;
-          grid-template-columns: repeat(6, 1fr);
+          grid-template-columns: repeat(4, 1fr);
           gap: 8px;
+          align-items: start;
         }
         .cpts-periph-item {
           display: flex;
@@ -1022,6 +1037,25 @@ export default function Concepts() {
           gap: 6px;
           padding: 10px 6px 8px;
           text-align: center;
+        }
+
+        /* ── VOIP Gateways sub-column ── */
+        .cpts-periph-voip-col {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .cpts-periph-voip-tcon {
+          width: 80%;
+          height: 36px;
+          display: block;
+        }
+        .cpts-periph-voip-sub {
+          display: flex;
+          width: 100%;
+          justify-content: center;
+          gap: 28px;
+          padding-left: 32px;
         }
         .cpts-periph-item--oval {
           border: 1px solid rgba(0,180,216,0.55);
