@@ -1,10 +1,139 @@
 'use client'
 
 import Image from 'next/image'
+import { useEffect, useRef } from 'react'
 import { useTranslations } from 'next-intl'
 
 export default function OrchestraConductor() {
   const t = useTranslations('orchestraConductor')
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+
+  useEffect(() => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
+
+    const resize = () => {
+      canvas.width = canvas.offsetWidth
+      canvas.height = canvas.offsetHeight
+    }
+    resize()
+    window.addEventListener('resize', resize)
+
+    const codeSnippets = [
+      'exten => 101,1,Answer()',
+      'exten => 101,2,VoiceMail(u101)',
+      'exten => 100,1,Dial(SIP/101)',
+      'same => n,Dial(SIP/102&SIP/103)',
+      'exten => 200,1,Playback(silence/1)',
+      'exten => *77,1,DeviceState(SIP/101)',
+      'exten => 777,1,VoiceMailMain()',
+      'exten => 999,1,ConfBridge(myconf,)',
+      'exten => _9.,1,Dial(DAHDI/g1/${EXTEN:1})',
+      'same => n,Set(CALLERID(name)=Office)',
+      'exten => h,1,Hangup()',
+      'same => n,GotoIf($[${DIALSTATUS}=BUSY]?busy)',
+      'exten => _1XX,1,Answer()',
+      'same => n,AGI(scripts/ivr.py)',
+      'exten => s,1,Set(TIMEOUT(digit)=5)',
+      'same => n,Background(mainmenu)',
+      'exten => 1,1,Goto(sales,s,1)',
+      'exten => 2,1,Goto(support,s,1)',
+      'same => n,WaitExten(10)',
+      'exten => *98,1,VoiceMailMain(${MAILBOX})',
+      'same => n,Set(CHANNEL(language)=ru)',
+      'exten => _0.,1,Dial(SIP/trunk/${EXTEN})',
+      'same => n,Queue(support,t,,60)',
+      'exten => 888,1,MeetMe(100,Mq)',
+      'same => n,Record(calls/${UNIQUEID}.wav)',
+    ]
+
+    interface CodeText {
+      text: string
+      startTime: number
+      lineIndex: number
+      columnId: number
+    }
+
+    interface CodeColumn {
+      id: number
+      x: number
+      y: number
+      lines: CodeText[]
+    }
+
+    const fontFamily = 'Monaco, Courier New, monospace'
+    const fontSize = 13
+    const lineHeight = 20
+
+    const zones = [
+      { xStart: canvas.width * 0.1, xEnd: canvas.width * 0.35 },
+      { xStart: canvas.width * 0.4, xEnd: canvas.width * 0.6 },
+      { xStart: canvas.width * 0.65, xEnd: canvas.width * 0.9 },
+    ]
+
+    const columns: CodeColumn[] = []
+    for (let i = 0; i < 3; i++) {
+      const zone = zones[i]
+      columns.push({
+        id: i,
+        x: Math.random() * (zone.xEnd - zone.xStart) + zone.xStart,
+        y: Math.random() * (canvas.height * 0.5) + canvas.height * 0.15,
+        lines: [],
+      })
+    }
+
+    const createCodeLine = () => {
+      const column = columns[Math.floor(Math.random() * columns.length)]
+      const snippet = codeSnippets[Math.floor(Math.random() * codeSnippets.length)]
+      column.lines.push({
+        text: snippet,
+        startTime: Date.now(),
+        lineIndex: column.lines.length,
+        columnId: column.id,
+      })
+    }
+
+    const codeCreationTimer = setInterval(() => {
+      const totalLines = columns.reduce((acc, col) => acc + col.lines.length, 0)
+      if (totalLines < 15) createCodeLine()
+    }, 1500)
+
+    createCodeLine()
+
+    let raf: number
+    const draw = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+      columns.forEach(column => {
+        const baseY = column.y - (column.lines.length * lineHeight) / 2
+
+        column.lines.forEach((codeText, idx) => {
+          const elapsed = Date.now() - codeText.startTime
+          const targetCharIndex = Math.floor(elapsed / 40)
+          const displayText = codeText.text.substring(0, targetCharIndex)
+          const y = baseY + idx * lineHeight
+
+          ctx.font = `${fontSize}px ${fontFamily}`
+          ctx.textAlign = 'center'
+          ctx.fillStyle = `rgba(0,180,216,${Math.max(0, 1 - elapsed / 10000)})`
+          ctx.fillText(displayText, column.x, y)
+
+          if (elapsed > 10000) column.lines.splice(idx, 1)
+        })
+      })
+
+      raf = requestAnimationFrame(draw)
+    }
+    draw()
+
+    return () => {
+      window.removeEventListener('resize', resize)
+      clearInterval(codeCreationTimer)
+      cancelAnimationFrame(raf)
+    }
+  }, [])
 
   return (
     <section
@@ -17,6 +146,8 @@ export default function OrchestraConductor() {
         overflow: 'hidden',
       }}
     >
+      <canvas ref={canvasRef} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' }} />
+
       {/* Atmospheric background gradient */}
       <div
         style={{
@@ -167,7 +298,7 @@ export default function OrchestraConductor() {
             style={{
               position: 'relative',
               zIndex: 1,
-              width: 'clamp(280px, 90%, 600px)',
+              width: 'clamp(220px, 70%, 460px)',
               height: 'auto',
               objectFit: 'contain',
             }}
