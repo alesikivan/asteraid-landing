@@ -31,15 +31,6 @@ export default function OrchestraConductor() {
       />
 
       <style>{`
-        @keyframes conductorFloat {
-          0%, 100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-20px);
-          }
-        }
-
         @keyframes textReveal {
           0% {
             opacity: 0;
@@ -49,10 +40,6 @@ export default function OrchestraConductor() {
             opacity: 1;
             transform: translateY(0);
           }
-        }
-
-        .orchestra-conductor-svg {
-          animation: conductorFloat 6s ease-in-out infinite;
         }
 
         .orchestra-text {
@@ -184,7 +171,6 @@ export default function OrchestraConductor() {
               height: 'auto',
               objectFit: 'contain',
             }}
-            className="orchestra-conductor-svg"
           />
         </div>
       </div>

@@ -17,6 +17,7 @@ export default function Header() {
     { label: t('benefits'), href: '#benefits' },
     { label: t('screenshots'), href: '#screenshots' },
     { label: t('faq'), href: '#faq' },
+    { label: t('support'), href: '#' },
   ]
 
   useEffect(() => {
