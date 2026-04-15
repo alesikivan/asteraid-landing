@@ -1,0 +1,49 @@
+# Asteraid
+
+> Professional web platform for Asterisk PBX administration. Manage multiple Asterisk servers from a single web interface.
+
+Asteraid is a free, self-hosted web platform built by Freeng Ltd for IT engineers who manage Asterisk-based telephony infrastructure. It replaces scattered SSH sessions and manual config editing with a unified, browser-based control center.
+
+## What Asteraid does
+
+- **Multi-PBX Management** — Add any number of Asterisk servers (by hostname or IP) and manage them centrally. Connect via SSH (password or key).
+- **Real-time Monitoring** — Live dashboard via WebSocket: RAM usage, trunk status (online/offline/disabled), extension status, active channels, last reload time, performance charts.
+- **Visual Dialplan Editor** — No-code/low-code drag-and-drop block diagram editor (powered by ReactFlow) that generates real Asterisk dialplan automatically.
+- **CDR (Call Detail Records)** — Full call history via ODBC. Filter by type (inbound/outbound/missed), search by number, built-in audio player, export to CSV/XLSX.
+- **SSH Web Terminal** — Full-featured xterm.js terminal in the browser. No PuTTY needed.
+- **Active Directory Integration** — Connect to multiple AD controllers, map groups to roles, import users.
+- **Role-based Access Control (RBAC)** — 4 roles: Administrator, Supervisor, User, Security. Each role has its own dashboard.
+- **Backup & Disaster Recovery** — AES-encrypted backups. Entire PBX network config in one archive. Restore from backup + decryption key only.
+- **Version History** — Automatic configuration snapshot on every "Apply". Browse and restore any previous state.
+- **Firewall Management** — Built-in firewall rules at PBX level with ipset support.
+- **SSL Certificate Management** — Upload, assign and monitor TLS certificates.
+- **Audit Log** — Every change logged with actor, timestamp, and before/after diff view.
+- **Config File Editor** — Monaco-based editor (VS Code engine) for direct Asterisk .conf file editing.
+
+## Pricing
+
+- **Single-server deployment: Free forever.** No licenses, no hidden fees.
+- Multi-server management is a paid feature.
+
+## Technology
+
+- **Backend:** Node.js, Express, MongoDB, Socket.IO, SSH2, Asterisk AMI, LDAP, Ansible, JWT
+- **Frontend:** React 17, TypeScript, Redux, ReactFlow, Monaco Editor, xterm.js, Chart.js
+- **Deployment:** Docker containers (2 containers: Configuration Server + MongoDB)
+
+## System Requirements
+
+- CPU: 1 core (x86_64)
+- RAM: 2 GB minimum
+- Storage: 16 GB minimum
+- OS: Any Linux with Docker (Ubuntu, Debian, CentOS, or cloud)
+- Network: 1Gb Ethernet (bridge mode for VMs)
+
+## Company
+
+Developed and maintained by **Freeng Ltd**.
+
+## Links
+
+- Website: https://asteraid.com
+- Documentation: https://asteraid.com (see Documentation link in footer)

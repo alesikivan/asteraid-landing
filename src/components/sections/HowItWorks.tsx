@@ -68,7 +68,7 @@ export default function HowItWorks() {
         </div>
 
         {/* Wizard teaser */}
-        <div style={{
+        {/* <div style={{
           marginTop: '64px', background: 'var(--bg-card)',
           border: '1px solid rgba(0,180,216,0.15)', borderRadius: '16px',
           padding: '32px', display: 'flex', alignItems: 'center', gap: '32px', flexWrap: 'wrap',
@@ -100,7 +100,7 @@ export default function HowItWorks() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
 
       <style>{`

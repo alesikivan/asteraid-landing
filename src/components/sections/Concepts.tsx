@@ -399,7 +399,7 @@ export default function Concepts() {
 
             {/* SIP Providers */}
             <div className="cpts-periph-item cpts-periph-item--phones">
-              <svg width="32" height="22" viewBox="0 0 32 22" fill="none">
+              <svg width="48" height="33" viewBox="0 0 32 22" fill="none">
                 <path d="M23 6c0-3-2.5-5.5-6-5.5a6.4 6.4 0 0 0-5.9 4C8.1 5.1 5 7.7 5 11a6 6 0 0 0 5.5 6H23a4 4 0 0 0 0-8z" stroke="rgba(0,180,216,0.85)" strokeWidth="1.4" fill="rgba(0,180,216,0.12)"/>
               </svg>
               <span>SIP Providers</span>
@@ -408,7 +408,7 @@ export default function Concepts() {
             {/* VOIP Gateways + sub-items (PSTN, Analog Phones) */}
             <div className="cpts-periph-voip-col">
               <div className="cpts-periph-item cpts-periph-item--phones">
-                <svg width="32" height="22" viewBox="0 0 32 22" fill="none">
+                <svg width="48" height="33" viewBox="0 0 32 22" fill="none">
                   <rect x="2" y="5" width="28" height="12" rx="3" stroke="rgba(0,180,216,0.85)" strokeWidth="1.4" fill="rgba(0,180,216,0.12)"/>
                   <circle cx="8"  cy="11" r="1.8" fill="rgba(0,180,216,0.9)"/>
                   <line x1="13" y1="11" x2="26" y2="11" stroke="rgba(0,180,216,0.6)" strokeWidth="1" strokeDasharray="2 2"/>
@@ -428,7 +428,7 @@ export default function Concepts() {
               <div className="cpts-periph-voip-sub">
                 {/* PSTN */}
                 <div className="cpts-periph-item cpts-periph-item--phones">
-                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                  <svg width="42" height="42" viewBox="0 0 28 28" fill="none">
                     <circle cx="14" cy="14" r="12" stroke="rgba(0,180,216,0.85)" strokeWidth="1.4" fill="rgba(0,180,216,0.12)"/>
                     <ellipse cx="14" cy="14" rx="5.5" ry="12" stroke="rgba(0,180,216,0.5)" strokeWidth="1" fill="none"/>
                     <line x1="2" y1="14" x2="26" y2="14" stroke="rgba(0,180,216,0.5)" strokeWidth="1"/>
@@ -441,7 +441,7 @@ export default function Concepts() {
                 <div className="cpts-periph-item cpts-periph-item--phones">
                   <div className="cpts-periph-phones">
                     {([0,1] as number[]).map(i => (
-                      <svg key={i} width="15" height="18" viewBox="0 0 15 18" fill="none">
+                      <svg key={i} width="22" height="26" viewBox="0 0 15 18" fill="none">
                         <polygon points="7.5,1 14,16 1,16" stroke="rgba(0,180,216,0.85)" strokeWidth="1.4" strokeLinejoin="round" fill="rgba(0,180,216,0.12)"/>
                       </svg>
                     ))}
@@ -453,7 +453,7 @@ export default function Concepts() {
 
             {/* Other PBXs */}
             <div className="cpts-periph-item cpts-periph-item--phones">
-              <svg width="32" height="22" viewBox="0 0 32 22" fill="none">
+              <svg width="48" height="33" viewBox="0 0 32 22" fill="none">
                 <rect x="2" y="2"  width="28" height="8" rx="2" stroke="rgba(0,180,216,0.85)" strokeWidth="1.4" fill="rgba(0,180,216,0.12)"/>
                 <rect x="2" y="12" width="28" height="8" rx="2" stroke="rgba(0,180,216,0.85)" strokeWidth="1.4" fill="rgba(0,180,216,0.12)"/>
                 <circle cx="26" cy="6"  r="1.5" fill="rgba(0,180,216,0.9)"/>
@@ -464,15 +464,26 @@ export default function Concepts() {
 
             {/* SIP Phones */}
             <div className="cpts-periph-item cpts-periph-item--phones">
-              <div className="cpts-periph-phones">
-                {([0,1,2,3] as number[]).map(i => (
-                  <svg key={i} width="11" height="18" viewBox="0 0 11 18" fill="none">
-                    <rect x="1" y="1" width="9" height="16" rx="2" stroke="rgba(0,180,216,0.85)" strokeWidth="1.4" fill="rgba(0,180,216,0.12)"/>
-                    <rect x="3" y="3" width="5" height="7" rx="1" fill="rgba(0,180,216,0.18)"/>
-                    <circle cx="5.5" cy="14" r="1" fill="rgba(0,180,216,0.9)"/>
-                  </svg>
-                ))}
-              </div>
+              <svg width="48" height="39" viewBox="0 0 52 42" fill="none">
+                {/* Handset */}
+                <rect x="1" y="3" width="11" height="36" rx="5.5" stroke="rgba(0,180,216,0.85)" strokeWidth="1.4" fill="rgba(0,180,216,0.12)"/>
+                {/* Body */}
+                <rect x="15" y="4" width="36" height="34" rx="3" stroke="rgba(0,180,216,0.85)" strokeWidth="1.4" fill="rgba(0,180,216,0.08)"/>
+                {/* Display */}
+                <rect x="18" y="7" width="30" height="8" rx="1.5" fill="rgba(0,180,216,0.15)" stroke="rgba(0,180,216,0.45)" strokeWidth="1"/>
+                {/* Keypad row 1 */}
+                <rect x="18" y="18" width="8" height="4" rx="1" fill="rgba(0,180,216,0.3)"/>
+                <rect x="29" y="18" width="8" height="4" rx="1" fill="rgba(0,180,216,0.3)"/>
+                <rect x="40" y="18" width="8" height="4" rx="1" fill="rgba(0,180,216,0.3)"/>
+                {/* Keypad row 2 */}
+                <rect x="18" y="24" width="8" height="4" rx="1" fill="rgba(0,180,216,0.3)"/>
+                <rect x="29" y="24" width="8" height="4" rx="1" fill="rgba(0,180,216,0.3)"/>
+                <rect x="40" y="24" width="8" height="4" rx="1" fill="rgba(0,180,216,0.3)"/>
+                {/* Keypad row 3 */}
+                <rect x="18" y="30" width="8" height="4" rx="1" fill="rgba(0,180,216,0.3)"/>
+                <rect x="29" y="30" width="8" height="4" rx="1" fill="rgba(0,180,216,0.3)"/>
+                <rect x="40" y="30" width="8" height="4" rx="1" fill="rgba(0,180,216,0.3)"/>
+              </svg>
               <span>SIP Phones</span>
             </div>
 

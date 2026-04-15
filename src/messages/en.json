@@ -1,7 +1,24 @@
 {
   "meta": {
     "title": "Asteraid — Professional Asterisk PBX Management",
-    "description": "Web platform for Asterisk administration: real-time PBX monitoring, visual dialplan editor, CDR, SSH terminal and Active Directory."
+    "description": "Web platform for Asterisk administration: real-time PBX monitoring, visual dialplan editor, CDR, SSH terminal and Active Directory.",
+    "ogTitle": "Asteraid — Manage All Your Asterisk PBX's from One Web Interface",
+    "ogDescription": "Free web platform for Asterisk PBX administration: real-time monitoring via WebSocket, visual no-code dialplan editor, CDR with audio playback, SSH terminal, Active Directory integration and role-based access.",
+    "twitterTitle": "Asteraid — Professional Asterisk PBX Management",
+    "twitterDescription": "Free web platform for Asterisk PBX administration. Visual dialplan editor, real-time monitoring, CDR, SSH terminal, Active Directory.",
+    "siteName": "Asteraid",
+    "jsonLd": {
+      "name": "Asteraid",
+      "description": "Professional web platform for Asterisk PBX administration. Manage multiple Asterisk servers from a single interface with real-time monitoring, visual dialplan editor, CDR viewer, SSH terminal, Active Directory integration and role-based access control.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Linux",
+      "offers": {
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free for single-server deployment"
+      },
+      "featureList": "Multi-PBX Management, Visual Dialplan Editor, Real-time Monitoring, CDR Viewer, SSH Web Terminal, Active Directory Integration, Role-based Access Control, Firewall Management, SSL Certificate Management, Audit Log, Backup & Recovery"
+    }
   },
   "nav": {
     "features": "Features",
