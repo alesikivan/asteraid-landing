@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "deploy": "NODE_ENV=production next build && rsync -a --delete --exclude='.git' --exclude='.DS_Store' dist/ ../prod-asteraid-landing/",
+    "deploy": "NODE_ENV=production next build && rsync -a --delete --exclude='.git' --exclude='.DS_Store' dist/ ../prod-asteraid-landing/dist/",
     "start": "next start",
     "lint": "eslint"
   },
