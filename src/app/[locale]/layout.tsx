@@ -6,6 +6,7 @@ import { routing } from '@/i18n/routing'
 import '@/app/globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import CookieConsent from '@/components/layout/CookieConsent'
 
 const BASE_URL = 'https://asteraid.com'
 
@@ -113,6 +114,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           <Header />
           <main>{children}</main>
           <Footer />
+          <CookieConsent />
         </NextIntlClientProvider>
       </body>
     </html>
