@@ -18,7 +18,7 @@ export default function Footer() {
   const RESOURCE_ITEMS = [
     { label: t('resourceDocs'), href: '#' },
     { label: t('resourceChangelog'), href: '#' },
-    { label: t('resourceSupport'), href: '#' },
+    { label: t('resourceSupport'), href: 'mailto:support@asteraid.com' },
     { label: t('resourcePrivacy'), href: '#' },
   ]
 
@@ -92,9 +92,26 @@ export default function Footer() {
               letterSpacing: '0.1em', textTransform: 'uppercase',
               color: 'var(--text-muted)', marginBottom: '16px',
             }}>{t('contact')}</h4>
-            <a href="#contact" className="btn-primary" style={{ fontSize: '14px', padding: '10px 20px' }}>
-              {tn('requestDemo')}
+            <a
+              href="mailto:support@asteraid.com"
+              style={{
+                display: 'inline-block',
+                color: 'var(--text-secondary)',
+                textDecoration: 'none',
+                fontSize: '14px',
+                marginBottom: '16px',
+                transition: 'color 0.2s',
+              }}
+              onMouseEnter={e => (e.currentTarget.style.color = 'var(--accent-primary)')}
+              onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-secondary)')}
+            >
+              support@asteraid.com
             </a>
+            <div>
+              <a href="#contact" className="btn-primary" style={{ fontSize: '14px', padding: '10px 20px' }}>
+                {tn('requestDemo')}
+              </a>
+            </div>
           </div>
         </div>
 
